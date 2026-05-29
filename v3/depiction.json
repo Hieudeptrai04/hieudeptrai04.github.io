@@ -1,0 +1,82 @@
+{
+  "minVersion": "0.1",
+  "class": "DepictionTabView",
+  "tintColor": "#FF8C00",
+  "tabs": [
+    {
+      "tabname": "Chi tiết",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "HIOS Faker v3 — 22-Layer Device Spoof",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Giả mạo thông tin thiết bị toàn diện** cho Zalo, Facebook, TikTok, Instagram, Shopee và nhiều app khác. Không inject trực tiếp vào app — spoof tập trung ở tầng hệ thống, mượt như máy thật.",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "22 lớp hook"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- GPS + carrier + locale đồng bộ theo IP (Shadowrocket)\n- Keychain ephemeral — không lưu device ID\n- WKWebView JS spoof: navigator, screen, canvas, WebGL\n- HTTP User-Agent patch theo iOS giả\n- DeviceCheck / ATTracking block\n- Ẩn jailbreak: stat, dyld, open, fork\n- NSUserDefaults + Keychain wipe khi đổi máy\n- VoIP push token spoof (PKPushRegistry)",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Yêu cầu"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Dopamine 2 (rootless) · ellekit · iOS 15.0+",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Liên hệ Telegram: @houselis",
+          "action": "https://t.me/houselis",
+          "openExternal": true,
+          "tintColor": "#2AABEE"
+        }
+      ]
+    },
+    {
+      "tabname": "Thay đổi",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "v3.2.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Sửa treo: bỏ hook popen/system, NSProcessInfo.environment\n- LAYER 18-22: UA patch, fork block, isCaptured, PKPushRegistry VoIP token",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "v3.1.x"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- LAYER 14: WKWebView JS fingerprint spoof\n- LAYER 15-17: UIScreen, NSUserDefaults, CTTelephony\n- Tự đồng bộ GPS theo IP, bỏ proxy thủ công\n- Nguồn Sileo tự động cập nhật mỗi 4 giờ",
+          "useSpacing": true
+        }
+      ]
+    }
+  ]
+}

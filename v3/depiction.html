@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIOS Faker v3</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 640px;
+         margin: 0 auto; padding: 24px; background: #1a1a1a; color: #eee; line-height: 1.55; }
+  h1 { color: #FF8C00; margin-bottom: 4px; }
+  h2 { color: #FF8C00; font-size: 1.05em; margin-top: 28px; border-bottom: 1px solid #333; padding-bottom: 6px; }
+  a { color: #2AABEE; text-decoration: none; }
+  code { background: #2a2a2a; padding: 2px 7px; border-radius: 5px; font-size: .9em; }
+  ul { padding-left: 20px; } li { margin: 4px 0; }
+  .tg { display: inline-block; background: #2AABEE; color: #fff; padding: 10px 20px;
+        border-radius: 8px; margin-top: 16px; font-weight: 600; }
+  .req { color: #aaa; font-size: .92em; }
+</style>
+</head>
+<body>
+  <h1>HIOS Faker v3</h1>
+  <p>Giả mạo thông tin thiết bị 22 lớp cho Zalo, Facebook, TikTok, Instagram, Shopee. Không inject trực tiếp vào app — mượt như máy thật.</p>
+
+  <h2>22 lớp hook</h2>
+  <ul>
+    <li>GPS + carrier + locale đồng bộ theo IP (Shadowrocket)</li>
+    <li>Keychain ephemeral — không lưu device ID</li>
+    <li>WKWebView JS spoof: navigator, screen, canvas, WebGL</li>
+    <li>HTTP User-Agent patch theo iOS giả</li>
+    <li>DeviceCheck / ATTracking block</li>
+    <li>Ẩn jailbreak: stat, dyld, open, fork</li>
+    <li>VoIP push token spoof (PKPushRegistry)</li>
+  </ul>
+
+  <h2>Yêu cầu</h2>
+  <p class="req">Dopamine 2 (rootless) · ellekit · iOS 15.0+</p>
+
+  <h2>Cài đặt</h2>
+  <p>Thêm nguồn Sileo: <code>https://hieudeptrai04.github.io/v3/</code></p>
+
+  <h2>Liên hệ</h2>
+  <a class="tg" href="https://t.me/houselis">Telegram @houselis</a>
+</body>
+</html>

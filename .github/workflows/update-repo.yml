@@ -19,34 +19,37 @@ jobs:
         run: |
           set -euo pipefail
 
-          RELEASES=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases?per_page=30")
+          # 1. Find latest v3 release tag
+          RELEASES=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases?per_page=50")
           TAG=$(echo "$RELEASES" | grep '"tag_name"' | grep '"v3-' | head -1 | cut -d'"' -f4)
           VERSION=$(echo "$TAG" | sed 's/v3-\([0-9.]*\)-.*/\1/')
-
           if [ -z "$TAG" ] || [ -z "$VERSION" ]; then
-            echo "No v3 release found"; exit 0
+            echo "No v3 release found"; exit 1
           fi
+          echo "Latest v3 tag: $TAG (v$VERSION)"
 
-          CURRENT=$(cat v3/VERSION 2>/dev/null || echo "")
-          if [ "$TAG" = "$CURRENT" ]; then
-            echo "Already up to date: $TAG"; exit 0
+          # 2. Scope the .deb to THIS tag's release (not the global first .deb,
+          #    which grabbed an unrelated v2.x build). Fetch the release by tag.
+          REL=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases/tags/$TAG")
+          DEB_URL=$(echo "$REL" | grep "browser_download_url" | grep "\.deb" | head -1 | cut -d'"' -f4)
+          if [ -z "$DEB_URL" ]; then
+            echo "No .deb asset in release $TAG"; exit 1
           fi
-
-          echo "Updating to $TAG (v$VERSION)..."
-
-          DEB_URL=$(echo "$RELEASES" | grep "browser_download_url" | grep "\.deb" | head -1 | cut -d'"' -f4)
           DEBNAME=$(basename "$DEB_URL")
+          echo "Deb: $DEBNAME"
+          echo "URL: $DEB_URL"
+
+          # 3. Download, purge any stale debs (keep only this one)
           mkdir -p v3/pool/main
-          curl -sL "$DEB_URL" -o "v3/pool/main/$DEBNAME"
+          curl -fsSL "$DEB_URL" -o "v3/pool/main/$DEBNAME"
+          find v3/pool/main/ -name "*.deb" ! -name "$DEBNAME" -delete 2>/dev/null || true
 
           SIZE=$(stat -c%s "v3/pool/main/$DEBNAME")
           MD5=$(md5sum      "v3/pool/main/$DEBNAME" | awk '{print $1}')
           SHA1=$(sha1sum    "v3/pool/main/$DEBNAME" | awk '{print $1}')
           SHA256=$(sha256sum "v3/pool/main/$DEBNAME" | awk '{print $1}')
 
-          find v3/pool/main/ -name "*.deb" ! -name "$DEBNAME" -delete 2>/dev/null || true
-
-          # Packages — full metadata with Sileo depiction + icon
+          # 4. Packages — printf only (heredocs break under YAML block indentation)
           printf '%s\n' \
             "Package: com.changeinfoios.v3" \
             "Name: HIOS Faker v3" \
@@ -56,21 +59,21 @@ jobs:
             "Author: houselis <https://t.me/houselis>" \
             "Maintainer: houselis <https://t.me/houselis>" \
             "Depends: ellekit | mobilesubstrate, firmware (>= 15.0)" \
-            "Description: Giả mạo thông tin thiết bị chuyên sâu cho Zalo, Facebook, TikTok, Instagram, Shopee. 22 lớp hook bao gồm GPS, Keychain, WebView JS, HTTP UA, carrier, IDFA. Liên hệ: Telegram @houselis" \
+            "Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis" \
             "Icon: https://hieudeptrai04.github.io/v3/icon.png" \
             "SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json" \
             "Depiction: https://hieudeptrai04.github.io/v3/depiction.html" \
-            "Tag: purpose::extension, compatible::dopamine, compatible::ellekit" \
+            "Tag: purpose::extension, compatible::dopamine" \
             "Filename: pool/main/$DEBNAME" \
             "Size: $SIZE" \
             "MD5sum: $MD5" \
             "SHA1: $SHA1" \
             "SHA256: $SHA256" \
             "" > v3/Packages
-          bzip2 -k v3/Packages
-          gzip  -k v3/Packages
+          bzip2 -kf v3/Packages
+          gzip  -kf v3/Packages
 
-          # Release
+          # 5. Release
           printf '%s\n' \
             "Origin: HIOS Faker" \
             "Label: HIOS Faker v3" \
@@ -79,82 +82,19 @@ jobs:
             "Codename: ios" \
             "Architectures: iphoneos-arm64" \
             "Components: main" \
-            "Description: HIOS Faker v3 - Deep device spoof. Telegram: @houselis" > v3/Release
-
-          # Sileo depiction JSON (rich package detail page)
-          cat > v3/depiction.json << 'JSONEOF'
-          {
-            "minVersion": "0.1",
-            "class": "DepictionTabView",
-            "headerImage": "https://hieudeptrai04.github.io/v3/banner.png",
-            "tintColor": "#FF8C00",
-            "tabs": [
-              {
-                "tabname": "Chi tiết",
-                "class": "DepictionStackView",
-                "views": [
-                  {
-                    "class": "DepictionSubheaderView",
-                    "title": "HIOS Faker v3 — 22-Layer Device Spoof",
-                    "useBoldText": true,
-                    "useBottomMargin": false
-                  },
-                  {
-                    "class": "DepictionMarkdownTextView",
-                    "markdown": "**Giả mạo thông tin thiết bị toàn diện** cho Zalo, Facebook, TikTok, Instagram, Shopee và nhiều app khác.\n\n**22 lớp hook bao gồm:**\n- GPS + carrier + locale đồng bộ theo IP\n- Keychain ephemeral (không lưu device ID)\n- WKWebView JS spoof (navigator, screen, canvas, WebGL)\n- HTTP User-Agent patch\n- DeviceCheck / ATT block\n- JB hiding (stat, dyld, open)\n- VoIP push token spoof\n\n**Yêu cầu:** Dopamine 2, ellekit, iOS 15+\n\n**Liên hệ:** Telegram [@houselis](https://t.me/houselis)",
-                    "useSpacing": true
-                  },
-                  {
-                    "class": "DepictionSeparatorView"
-                  },
-                  {
-                    "class": "DepictionTableButtonView",
-                    "title": "Liên hệ Telegram",
-                    "action": "https://t.me/houselis",
-                    "openExternal": true,
-                    "tintColor": "#2AABEE"
-                  }
-                ]
-              },
-              {
-                "tabname": "Thay đổi",
-                "class": "DepictionStackView",
-                "views": [
-                  {
-                    "class": "DepictionMarkdownTextView",
-                    "markdown": "**v3.2.2**\n- Fix hang: remove popen/system hooks\n- LAYER 18-22: UA patch, fork block, isCaptured, PKPushRegistry\n\n**v3.1.x**\n- LAYER 14: WKWebView JS fingerprint spoof\n- LAYER 15-17: UIScreen, NSUserDefaults, CTTelephony\n- Sileo repo tự động update",
-                    "useSpacing": true
-                  }
-                ]
-              }
-            ]
-          }
-          JSONEOF
-          # Fix indentation — heredoc in run: adds leading spaces
-          sed 's/^          //' v3/depiction.json > v3/depiction.json.tmp && mv v3/depiction.json.tmp v3/depiction.json
-
-          # Simple HTML depiction fallback
-          cat > v3/depiction.html << 'HTMLEOF'
-          <!DOCTYPE html><html><head><meta charset="utf-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>HIOS Faker v3</title>
-          <style>body{font-family:-apple-system,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#1a1a1a;color:#fff}
-          h1{color:#FF8C00}a{color:#2AABEE}.tag{background:#333;padding:2px 8px;border-radius:4px;font-size:.8em;margin:2px;display:inline-block}</style>
-          </head><body>
-          <h1>HIOS Faker v3</h1>
-          <p>Giả mạo thông tin thiết bị 22 lớp cho Zalo, Facebook, TikTok, Instagram, Shopee.</p>
-          <p>Nguồn Sileo: <code>https://hieudeptrai04.github.io/v3/</code></p>
-          <p>Liên hệ: <a href="https://t.me/houselis">Telegram @houselis</a></p>
-          </body></html>
-          HTMLEOF
-          sed 's/^          //' v3/depiction.html > v3/depiction.html.tmp && mv v3/depiction.html.tmp v3/depiction.html
+            "Description: HIOS Faker v3 - Deep device spoof. Telegram @houselis" > v3/Release
 
           echo "$TAG" > v3/VERSION
 
+          # 6. Commit only if something changed (no early-exit, so script
+          #    edits always re-apply; empty-diff guard prevents noise commits)
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add v3/
-          git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "repo: v3 $VERSION ($TAG)"
-          git push
-          echo "Live: https://hieudeptrai04.github.io/v3/"
+          git add -A v3/
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "repo: v3 $VERSION ($TAG)"
+            git push
+            echo "Live: https://hieudeptrai04.github.io/v3/"
+          fi
