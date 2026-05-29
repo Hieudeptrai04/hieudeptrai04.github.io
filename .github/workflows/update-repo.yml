@@ -1,0 +1,84 @@
+name: Update APT Repo
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest v3 release and build APT repo
+        run: |
+          set -euo pipefail
+
+          RELEASES=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases?per_page=30")
+          TAG=$(echo "$RELEASES" | grep '"tag_name"' | grep '"v3-' | head -1 | cut -d'"' -f4)
+          VERSION=$(echo "$TAG" | sed 's/v3-\([0-9.]*\)-.*/\1/')
+
+          if [ -z "$TAG" ] || [ -z "$VERSION" ]; then
+            echo "No v3 release found"; exit 0
+          fi
+
+          CURRENT=$(cat v3/VERSION 2>/dev/null || echo "")
+          if [ "$TAG" = "$CURRENT" ]; then
+            echo "Already up to date: $TAG"; exit 0
+          fi
+
+          echo "Updating to $TAG (v$VERSION)..."
+
+          DEB_URL=$(echo "$RELEASES" | grep "browser_download_url" | grep "\.deb" | head -1 | cut -d'"' -f4)
+          DEBNAME=$(basename "$DEB_URL")
+          mkdir -p v3/pool/main
+          curl -sL "$DEB_URL" -o "v3/pool/main/$DEBNAME"
+
+          SIZE=$(stat -c%s "v3/pool/main/$DEBNAME")
+          MD5=$(md5sum    "v3/pool/main/$DEBNAME" | awk '{print $1}')
+          SHA1=$(sha1sum  "v3/pool/main/$DEBNAME" | awk '{print $1}')
+          SHA256=$(sha256sum "v3/pool/main/$DEBNAME" | awk '{print $1}')
+
+          find v3/pool/main/ -name "*.deb" ! -name "$DEBNAME" -delete 2>/dev/null || true
+
+          printf '%s\n' \
+            "Package: com.changeinfoios.v3" \
+            "Name: HIOS Faker v3" \
+            "Version: $VERSION" \
+            "Architecture: iphoneos-arm64" \
+            "Section: Tweaks" \
+            "Author: ChangeInfoIos" \
+            "Maintainer: ChangeInfoIos" \
+            "Depends: ellekit | mobilesubstrate, firmware (>= 15.0)" \
+            "Description: HIOS Faker v3 - 22-layer device spoof for Zalo/FB/TikTok/IG" \
+            "Filename: pool/main/$DEBNAME" \
+            "Size: $SIZE" \
+            "MD5sum: $MD5" \
+            "SHA1: $SHA1" \
+            "SHA256: $SHA256" \
+            "" > v3/Packages
+          bzip2 -k v3/Packages
+          gzip  -k v3/Packages
+
+          printf '%s\n' \
+            "Origin: HIOS Faker" \
+            "Label: HIOS Faker v3" \
+            "Suite: stable" \
+            "Version: $VERSION" \
+            "Codename: ios" \
+            "Architectures: iphoneos-arm64" \
+            "Components: main" \
+            "Description: HIOS Faker v3" > v3/Release
+
+          echo "$TAG" > v3/VERSION
+
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add v3/
+          git diff --cached --quiet && exit 0
+          git commit -m "repo: v3 $VERSION ($TAG)"
+          git push
+          echo "Live: https://hieudeptrai04.github.io/v3/"
