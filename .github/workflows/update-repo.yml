@@ -98,3 +98,5 @@ jobs:
             git push
             echo "Live: https://hieudeptrai04.github.io/v3/"
           fi
+
+# trigger update v3.3.3 sync
