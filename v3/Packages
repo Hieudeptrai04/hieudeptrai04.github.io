@@ -1,0 +1,15 @@
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Version: 3.2.2
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: ChangeInfoIos
+Maintainer: ChangeInfoIos
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Faker v3 - 22-layer device spoof for Zalo/FB/TikTok/IG
+Filename: pool/main/ChangeInfoIos_2.7.4_iphoneos-arm64.deb
+Size: 222320
+MD5sum: 4d4b110996dd4b45ee8444c12e20ac48
+SHA1: a763bac04128d2be5d29936e20cca936ff424b60
+SHA256: cf810abc304bc6689b84eb8cdc923603166a8d9e8025b3c7a8342c44751499c8
+
