@@ -16,32 +16,39 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch latest v3 release and build APT repo
+        env:
+          # Optional PAT (repo:read) so this works when HIOS-Faker is PRIVATE.
+          # Leave the secret unset while the source repo is public — the curls
+          # fall back to anonymous and still work.
+          SRC_TOKEN: ${{ secrets.SRC_TOKEN }}
         run: |
           set -euo pipefail
+          API="https://api.github.com/repos/Hieudeptrai04/HIOS-Faker"
+          AUTH=()
+          if [ -n "${SRC_TOKEN:-}" ]; then AUTH=(-H "Authorization: token $SRC_TOKEN"); fi
 
           # 1. Find latest v3 release tag
-          RELEASES=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases?per_page=50")
+          RELEASES=$(curl -sL "${AUTH[@]}" "$API/releases?per_page=50")
           TAG=$(echo "$RELEASES" | grep '"tag_name"' | grep '"v3-' | head -1 | cut -d'"' -f4)
           VERSION=$(echo "$TAG" | sed 's/v3-\([0-9.]*\)-.*/\1/')
           if [ -z "$TAG" ] || [ -z "$VERSION" ]; then
-            echo "No v3 release found"; exit 1
+            echo "No v3 release found (private repo without SRC_TOKEN?)"; exit 1
           fi
           echo "Latest v3 tag: $TAG (v$VERSION)"
 
-          # 2. Scope the .deb to THIS tag's release (not the global first .deb,
-          #    which grabbed an unrelated v2.x build). Fetch the release by tag.
-          REL=$(curl -sL "https://api.github.com/repos/Hieudeptrai04/HIOS-Faker/releases/tags/$TAG")
-          DEB_URL=$(echo "$REL" | grep "browser_download_url" | grep "\.deb" | head -1 | cut -d'"' -f4)
-          if [ -z "$DEB_URL" ]; then
+          # 2. Scope the .deb to THIS tag's release. Use the asset API url +
+          #    Accept: octet-stream so it works for PRIVATE releases too.
+          REL=$(curl -sL "${AUTH[@]}" "$API/releases/tags/$TAG")
+          DEBNAME=$(echo "$REL" | jq -r '.assets[] | select(.name|endswith(".deb")) | .name' | head -1)
+          ASSET_URL=$(echo "$REL" | jq -r '.assets[] | select(.name|endswith(".deb")) | .url' | head -1)
+          if [ -z "$DEBNAME" ] || [ "$ASSET_URL" = "null" ] || [ -z "$ASSET_URL" ]; then
             echo "No .deb asset in release $TAG"; exit 1
           fi
-          DEBNAME=$(basename "$DEB_URL")
           echo "Deb: $DEBNAME"
-          echo "URL: $DEB_URL"
 
           # 3. Download, purge any stale debs (keep only this one)
           mkdir -p v3/pool/main
-          curl -fsSL "$DEB_URL" -o "v3/pool/main/$DEBNAME"
+          curl -fsSL "${AUTH[@]}" -H "Accept: application/octet-stream" "$ASSET_URL" -o "v3/pool/main/$DEBNAME"
           find v3/pool/main/ -name "*.deb" ! -name "$DEBNAME" -delete 2>/dev/null || true
 
           SIZE=$(stat -c%s "v3/pool/main/$DEBNAME")
