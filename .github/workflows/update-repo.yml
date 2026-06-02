@@ -46,41 +46,51 @@ jobs:
           fi
           echo "Deb: $DEBNAME"
 
-          # 3. Download, purge any stale debs (keep only this one)
+          # 3. Download the latest release deb. Do NOT purge older debs — every
+          #    published version stays in the pool so customers can pick the
+          #    version they want in Sileo ("Other versions"). A new release
+          #    ADDS a version; it never replaces the one already installed.
           mkdir -p v3/pool/main
           curl -fsSL "${AUTH[@]}" -H "Accept: application/octet-stream" "$ASSET_URL" -o "v3/pool/main/$DEBNAME"
-          find v3/pool/main/ -name "*.deb" ! -name "$DEBNAME" -delete 2>/dev/null || true
 
-          SIZE=$(stat -c%s "v3/pool/main/$DEBNAME")
-          MD5=$(md5sum      "v3/pool/main/$DEBNAME" | awk '{print $1}')
-          SHA1=$(sha1sum    "v3/pool/main/$DEBNAME" | awk '{print $1}')
-          SHA256=$(sha256sum "v3/pool/main/$DEBNAME" | awk '{print $1}')
-
-          # 4. Packages — printf only (heredocs break under YAML block indentation)
-          printf '%s\n' \
-            "Package: com.changeinfoios.v3" \
-            "Name: HIOS Faker v3" \
-            "Version: $VERSION" \
-            "Architecture: iphoneos-arm64" \
-            "Section: Tweaks" \
-            "Author: houselis <https://t.me/houselis>" \
-            "Maintainer: houselis <https://t.me/houselis>" \
-            "Depends: ellekit | mobilesubstrate, firmware (>= 15.0)" \
-            "Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis" \
-            "Icon: https://hieudeptrai04.github.io/v3/icon.png" \
-            "SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json" \
-            "Depiction: https://hieudeptrai04.github.io/v3/depiction.html" \
-            "Tag: purpose::extension, compatible::dopamine" \
-            "Filename: pool/main/$DEBNAME" \
-            "Size: $SIZE" \
-            "MD5sum: $MD5" \
-            "SHA1: $SHA1" \
-            "SHA256: $SHA256" \
-            "" > v3/Packages
+          # 4. Packages — one stanza per .deb present in the pool (multi-version).
+          #    Version/Filename/Size/hashes come from each deb; the rest is shared
+          #    metadata. printf only (heredocs break under YAML block indentation).
+          : > v3/Packages
+          for DEB in v3/pool/main/*.deb; do
+            [ -f "$DEB" ] || continue
+            BN=$(basename "$DEB")
+            VER=$(dpkg-deb -f "$DEB" Version 2>/dev/null || true)
+            [ -z "$VER" ] && VER="$VERSION"
+            SIZE=$(stat -c%s "$DEB")
+            MD5=$(md5sum      "$DEB" | awk '{print $1}')
+            SHA1=$(sha1sum    "$DEB" | awk '{print $1}')
+            SHA256=$(sha256sum "$DEB" | awk '{print $1}')
+            printf '%s\n' \
+              "Package: com.changeinfoios.v3" \
+              "Name: HIOS Faker v3" \
+              "Version: $VER" \
+              "Architecture: iphoneos-arm64" \
+              "Section: Tweaks" \
+              "Author: houselis <https://t.me/houselis>" \
+              "Maintainer: houselis <https://t.me/houselis>" \
+              "Depends: ellekit | mobilesubstrate, firmware (>= 15.0)" \
+              "Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis" \
+              "Icon: https://hieudeptrai04.github.io/v3/icon.png" \
+              "SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json" \
+              "Depiction: https://hieudeptrai04.github.io/v3/depiction.html" \
+              "Tag: purpose::extension, compatible::dopamine" \
+              "Filename: pool/main/$BN" \
+              "Size: $SIZE" \
+              "MD5sum: $MD5" \
+              "SHA1: $SHA1" \
+              "SHA256: $SHA256" \
+              "" >> v3/Packages
+          done
           bzip2 -kf v3/Packages
           gzip  -kf v3/Packages
 
-          # 5. Release
+          # 5. Release — Version reflects the newest published version.
           printf '%s\n' \
             "Origin: HIOS Faker" \
             "Label: HIOS Faker v3" \
@@ -101,11 +111,9 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else
-            git commit -m "repo: v3 $VERSION ($TAG)"
+            git commit -m "repo: v3 $VERSION ($TAG) — keep all versions"
             git push
             echo "Live: https://hieudeptrai04.github.io/v3/"
           fi
 
-# trigger update v3.3.3 sync
-
-# sync v3.3.5
+# multi-version repo: new releases ADD a version, never replace 3.3.5
