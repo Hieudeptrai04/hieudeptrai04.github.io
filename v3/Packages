@@ -36,3 +36,22 @@ MD5sum: b1603e0ddcb3a49d47a678b80d5c032e
 SHA1: 13c34647ee5bcd929ac7a1dc98625de045b029fe
 SHA256: 79962286d53f1064113e6a440e886ec96a4d63ef8fab6064fd78eb2b605a2a77
 
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Version: 3.3.7
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
+Icon: https://hieudeptrai04.github.io/v3/icon.png
+SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
+Depiction: https://hieudeptrai04.github.io/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ChangeInfoIos-v3_3.3.7_iphoneos-arm64.deb
+Size: 172636
+MD5sum: 2145cd717a40ecc13cbac7b444ea59da
+SHA1: f1d3483bc8bd706d5025d7738bca7e1860b70315
+SHA256: 0c93a6f6eb312becd6fc176afabb96c6fcea91cc484bda4f7367b6a74cf6390b
+
