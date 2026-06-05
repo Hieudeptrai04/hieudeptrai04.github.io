@@ -17,10 +17,11 @@ jobs:
 
       - name: Fetch latest v3 release and build APT repo
         env:
-          # Optional PAT (repo:read) so this works when HIOS-Faker is PRIVATE.
-          # Leave the secret unset while the source repo is public — the curls
-          # fall back to anonymous and still work.
-          SRC_TOKEN: ${{ secrets.SRC_TOKEN }}
+          # Use a PAT if set; otherwise the auto GITHUB_TOKEN so the
+          # api.github.com calls are AUTHENTICATED. Anonymous calls share a
+          # 60/hr IP limit and were getting rate-limited (empty response →
+          # grep finds no tag → set -e aborts the run in ~90ms).
+          SRC_TOKEN: ${{ secrets.SRC_TOKEN || github.token }}
         run: |
           set -euo pipefail
           API="https://api.github.com/repos/Hieudeptrai04/HIOS-Faker"
