@@ -28,23 +28,22 @@ jobs:
           AUTH=()
           if [ -n "${SRC_TOKEN:-}" ]; then AUTH=(-H "Authorization: token $SRC_TOKEN"); fi
 
-          # 1-3. Sync EVERY published v3- release deb into the pool, EXCEPT the
-          #       versions we deliberately removed. GitHub's /releases order is
-          #       NOT version-sorted, so the old "head -1" both missed newer
-          #       builds (3.3.10 listed after 3.3.9) and, if version-sorted,
-          #       would stick on 4.0.0-beta. Iterating ALL releases makes the
-          #       pool a reliable mirror; EXCLUDE keeps deletions deleted.
-          EXCLUDE="3.3.3 3.3.4 3.3.5 3.3.7 3.3.8"
+          # Publish ONLY the curated KEEP set — single source of truth for what
+          # appears in Sileo. Add a version to publish it; remove it to delete it.
+          # (GitHub keeps every release, and /releases isn't version-sorted, so we
+          # don't rely on "latest"; we explicitly list what to mirror.)
+          KEEP="3.3.6 3.3.9 3.3.10 4.0.0-beta"
           RELEASES=$(curl -sL "${AUTH[@]}" "$API/releases?per_page=100")
           TAGS=$(echo "$RELEASES" | jq -r '.[].tag_name' | grep '^v3-' || true)
           if [ -z "$TAGS" ]; then
             echo "No v3 release found (private repo without SRC_TOKEN?)"; exit 1
           fi
           mkdir -p v3/pool/main
+          # 1) download each KEEP version not already in the pool
           for TAG in $TAGS; do
             VER=$(echo "$TAG" | sed 's/^v3-\(.*\)-[0-9a-f]\{7,\}$/\1/')
             [ -z "$VER" ] && continue
-            case " $EXCLUDE " in *" $VER "*) echo "skip excluded $VER"; continue;; esac
+            case " $KEEP " in *" $VER "*) ;; *) continue;; esac
             DEBFN="ChangeInfoIos-v3_${VER}_iphoneos-arm64.deb"
             [ -f "v3/pool/main/$DEBFN" ] && { echo "have $VER"; continue; }
             REL=$(curl -sL "${AUTH[@]}" "$API/releases/tags/$TAG")
@@ -52,9 +51,13 @@ jobs:
             if [ -n "$ASSET_URL" ] && [ "$ASSET_URL" != "null" ]; then
               curl -fsSL "${AUTH[@]}" -H "Accept: application/octet-stream" "$ASSET_URL" -o "v3/pool/main/$DEBFN"
               echo "added $VER"
-            else
-              echo "no .deb asset in $TAG"
             fi
+          done
+          # 2) purge any pool deb whose version is NOT in KEEP
+          for DEB in v3/pool/main/*.deb; do
+            [ -f "$DEB" ] || continue
+            DV=$(basename "$DEB" | sed -n 's/^ChangeInfoIos-v3_\(.*\)_iphoneos-arm64.deb$/\1/p')
+            case " $KEEP " in *" $DV "*) ;; *) rm -f "$DEB"; echo "purged $DV";; esac
           done
           # newest version (by version sort) — only used for the Release file
           VERSION=$(ls v3/pool/main/ 2>/dev/null | sed -n 's/^ChangeInfoIos-v3_\(.*\)_iphoneos-arm64.deb$/\1/p' | sort -V | tail -1)
