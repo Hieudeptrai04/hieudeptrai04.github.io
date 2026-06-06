@@ -1,6 +1,6 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 3.3.10
+Version: 4.0.3
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -11,85 +11,9 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_3.3.10_iphoneos-arm64.deb
-Size: 177668
-MD5sum: ee0b038d586d7b7ad30bf03b37b1ff3e
-SHA1: 12cac19def0c3aa188fa7c6ba5203a777ba59946
-SHA256: d089253c16a5262fa2ba214ca78062f9b2175e7a39ac846e081f4e8661f5153f
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 3.3.6
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_3.3.6_iphoneos-arm64.deb
-Size: 172204
-MD5sum: b1603e0ddcb3a49d47a678b80d5c032e
-SHA1: 13c34647ee5bcd929ac7a1dc98625de045b029fe
-SHA256: 79962286d53f1064113e6a440e886ec96a4d63ef8fab6064fd78eb2b605a2a77
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 3.3.9
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_3.3.9_iphoneos-arm64.deb
-Size: 177740
-MD5sum: d9e0e46cf92cfa1869a9e7e8fb3bee6d
-SHA1: a2efe6a44b080750d4d132b385f5f009071ada89
-SHA256: 0b0b58b5eee07799f86953ace1f92b535be1e0ef5080e87cfce934dfa34f0d00
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.0.0-beta
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.0.0-beta_iphoneos-arm64.deb
-Size: 176808
-MD5sum: 1c150faeeb61bb6740230256049c40c9
-SHA1: 20ea92313eb6da6b4dc78efe9ab4ad697c94b641
-SHA256: 3778d6d5edc9deb9ffdbacd4efbb2c163e3cb2e64867942ac65b9b405268547a
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.0.1
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.0.1_iphoneos-arm64.deb
-Size: 177972
-MD5sum: ef089913b5eb8d20ecde172e63f4d2c9
-SHA1: 821263de41bce9e91a6564e88db6a6cfc6e1baee
-SHA256: c148d083ebf3a89da7b4d78e2dea1d188f7a189af14ab2e173d204fdc86b96c0
+Filename: pool/main/ChangeInfoIos-v3_4.0.3_iphoneos-arm64.deb
+Size: 179140
+MD5sum: 546bfa92ec6b6daceba02370c6557c43
+SHA1: e1aa599d049355f1d1aa459280905f69c1c052a8
+SHA256: ff8deabb2889d682b7398e29abb75b9f1982f4d6389aa4898a7a0172183e3846
 
