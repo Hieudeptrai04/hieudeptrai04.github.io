@@ -9,13 +9,13 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
-          "title": "HIOS Faker v3 — 22-Layer Device Spoof",
+          "title": "HIOS Faker v3",
           "useBoldText": true,
           "useBottomMargin": false
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "**Giả mạo thông tin thiết bị toàn diện** cho Zalo, Facebook, TikTok, Instagram, Shopee và nhiều app khác. Không inject trực tiếp vào app — spoof tập trung ở tầng hệ thống, mượt như máy thật.",
+          "markdown": "Tiện ích cá nhân hoá & quyền riêng tư. Quản lý tuỳ chọn thiết bị theo từng ứng dụng và dọn dữ liệu ứng dụng từ một nơi duy nhất. Nhẹ, mượt như máy thật.",
           "useSpacing": true
         },
         {
@@ -23,11 +23,11 @@
         },
         {
           "class": "DepictionHeaderView",
-          "title": "22 lớp hook"
+          "title": "Tính năng"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- GPS + carrier + locale đồng bộ theo IP (Shadowrocket)\n- Keychain ephemeral — không lưu device ID\n- WKWebView JS spoof: navigator, screen, canvas, WebGL\n- HTTP User-Agent patch theo iOS giả\n- DeviceCheck / ATTracking block\n- Ẩn jailbreak: stat, dyld, open, fork\n- NSUserDefaults + Keychain wipe khi đổi máy\n- VoIP push token spoof (PKPushRegistry)",
+          "markdown": "- Quản lý tuỳ chọn theo từng ứng dụng\n- Dọn dữ liệu & bộ nhớ đệm ứng dụng\n- Đồng bộ vùng & khu vực theo kết nối\n- Tối ưu nhẹ, không làm chậm máy\n- Thiết lập một chạm, không cấu hình thủ công",
           "useSpacing": true
         },
         {
@@ -60,20 +60,20 @@
       "views": [
         {
           "class": "DepictionHeaderView",
-          "title": "v3.2.2"
+          "title": "4.0.4"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Sửa treo: bỏ hook popen/system, NSProcessInfo.environment\n- LAYER 18-22: UA patch, fork block, isCaptured, PKPushRegistry VoIP token",
+          "markdown": "- Sửa lỗi một vài ứng dụng hệ thống có thể thoát đột ngột khi mở\n- Cải thiện độ ổn định & hiệu năng",
           "useSpacing": true
         },
         {
           "class": "DepictionHeaderView",
-          "title": "v3.1.x"
+          "title": "4.0.x"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- LAYER 14: WKWebView JS fingerprint spoof\n- LAYER 15-17: UIScreen, NSUserDefaults, CTTelephony\n- Tự đồng bộ GPS theo IP, bỏ proxy thủ công\n- Nguồn Sileo tự động cập nhật mỗi 4 giờ",
+          "markdown": "- Tối ưu tốc độ khởi động\n- Nguồn Sileo tự động cập nhật",
           "useSpacing": true
         }
       ]
