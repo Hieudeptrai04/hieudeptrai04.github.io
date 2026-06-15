@@ -6,7 +6,7 @@ Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
@@ -25,7 +25,7 @@ Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
@@ -44,7 +44,7 @@ Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
@@ -63,14 +63,14 @@ Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: Gia mao thong tin thiet bi 22 lop cho Zalo/Facebook/TikTok/Instagram/Shopee. GPS theo IP, Keychain ephemeral, WebView JS spoof. Lien he Telegram @houselis
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
 Filename: pool/main/ChangeInfoIos-v3_4.0.4_iphoneos-arm64.deb
-Size: 179752
-MD5sum: fc80cb0f6a4cc441b5627ee28798f7f3
-SHA1: f28a310c746b094a4f5387b8ddadb087c9c25a8c
-SHA256: 0984b834e0bc94af381f823db1fbc0b5eb60b13b67a5b24c3e02968bc1e25737
+Size: 180168
+MD5sum: af9f5bda100bfcd26a33c2b28aa999a3
+SHA1: 1a20c65fbc72c6a85b2146aca40910c264e1cc98
+SHA256: 3ae65b7fd8c47b7d69188829a255b639aabf70084ed624f29e667bf20e0691c0
 
