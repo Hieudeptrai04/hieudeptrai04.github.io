@@ -19,7 +19,7 @@ SHA256: ff8deabb2889d682b7398e29abb75b9f1982f4d6389aa4898a7a0172183e3846
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.0.4
+Version: 4.0.6
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -30,28 +30,9 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.0.4_iphoneos-arm64.deb
-Size: 180424
-MD5sum: c1cbaac1526384a3beb9e54ee7fe4299
-SHA1: 6adbf1b3ae92512b7f22414485445b03af8db455
-SHA256: 76e891fd32202663c019e05b980838c034b433238b104f69d1f3e3b1d77a7035
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.0.5
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.0.5_iphoneos-arm64.deb
-Size: 206272
-MD5sum: 8fdd5d74f01f6cfbab2e4067b8550dbf
-SHA1: acd94af84cf4f4d57071566b1c397e4bbb45f238
-SHA256: 9b71e42f57d1025577b102277b99d7b3e7287852110448fc5cdeb55bf268a7e3
+Filename: pool/main/ChangeInfoIos-v3_4.0.6_iphoneos-arm64.deb
+Size: 206024
+MD5sum: 328807a0113514fe3d0b6ecbfbf1cabf
+SHA1: c98f7acc19a7891212690431933f614603520c3c
+SHA256: 277c73d25c5463d8e63be3345bb8e44007600f6b1b0ed1e22a7221a8b3340cc0
 
