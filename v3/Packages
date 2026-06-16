@@ -88,8 +88,8 @@ SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
 Filename: pool/main/ChangeInfoIos-v3_4.0.5_iphoneos-arm64.deb
-Size: 206300
-MD5sum: a84732cdb433c32548fca9606d2d5ea8
-SHA1: b18626e54aed3e0f12f9be03414d7e98ec5446ee
-SHA256: 346f8c62ac6d11bd4ad62a44ab0e5b383866e367c7e1c72752840bf04d554bc0
+Size: 206272
+MD5sum: 8fdd5d74f01f6cfbab2e4067b8550dbf
+SHA1: acd94af84cf4f4d57071566b1c397e4bbb45f238
+SHA256: 9b71e42f57d1025577b102277b99d7b3e7287852110448fc5cdeb55bf268a7e3
 
