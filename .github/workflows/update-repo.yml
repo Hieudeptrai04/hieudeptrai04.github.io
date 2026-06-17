@@ -32,7 +32,7 @@ jobs:
           # appears in Sileo. Add a version to publish it; remove it to delete it.
           # (GitHub keeps every release, and /releases isn't version-sorted, so we
           # don't rely on "latest"; we explicitly list what to mirror.)
-          KEEP="4.0.7-beta"
+          KEEP="4.0.6 4.0.7-beta"
           RELEASES=$(curl -sL "${AUTH[@]}" "$API/releases?per_page=100")
           TAGS=$(echo "$RELEASES" | jq -r '.[].tag_name' | grep '^v3-' || true)
           if [ -z "$TAGS" ]; then
