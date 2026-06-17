@@ -1,5 +1,24 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 4.0.6
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Icon: https://hieudeptrai04.github.io/v3/icon.png
+SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
+Depiction: https://hieudeptrai04.github.io/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ChangeInfoIos-v3_4.0.6_iphoneos-arm64.deb
+Size: 206024
+MD5sum: 328807a0113514fe3d0b6ecbfbf1cabf
+SHA1: c98f7acc19a7891212690431933f614603520c3c
+SHA256: 277c73d25c5463d8e63be3345bb8e44007600f6b1b0ed1e22a7221a8b3340cc0
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
 Version: 4.0.7-beta
 Architecture: iphoneos-arm64
 Section: Tweaks
