@@ -1,0 +1,8 @@
+Origin: ViberChange
+Label: ViberChange
+Suite: stable
+Version: 4.1.2-double
+Codename: ios
+Architectures: iphoneos-arm64
+Components: main
+Description: ViberChange - Viber-only device changer. Telegram @houselis
