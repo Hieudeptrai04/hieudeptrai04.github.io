@@ -1,12 +1,29 @@
 Package: com.viberchange
 Name: ViberChange
+Version: 1.1.10
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group de dang ky tai khoan moi nhu may vua cai lai. Telegram @houselis
+Icon: https://hieudeptrai04.github.io/v3/icon.png
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ViberChange_1.1.10_iphoneos-arm64.deb
+Size: 218652
+MD5sum: bbb9092f656543b975012cb679954eab
+SHA1: c677d1c854fbc65f27138be0438c379315e7da48
+SHA256: 196e293fe9bdf73e553caa54d135841130b602fa52c40a2a771497281b299dac
+
+Package: com.viberchange
+Name: ViberChange
 Version: 1.1.9-7plus
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group SecureStorage de dang ky tai khoan moi nhu may vua cai lai. Lien he Telegram @houselis
+Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group de dang ky tai khoan moi nhu may vua cai lai. Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 Tag: purpose::extension, compatible::dopamine
 Filename: pool/main/ViberChange_1.1.9-7plus_iphoneos-arm64.deb

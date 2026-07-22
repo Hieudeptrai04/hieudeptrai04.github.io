@@ -1,7 +1,7 @@
 Origin: ViberChange
 Label: ViberChange
 Suite: stable
-Version: 1.1.9-7plus
+Version: 1.1.10
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
