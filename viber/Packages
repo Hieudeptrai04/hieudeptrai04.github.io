@@ -1,17 +1,17 @@
 Package: com.viberchange
 Name: ViberChange
-Version: 4.1.2-double
+Version: 1.1.9-7plus
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: ViberChange - doi thong tin thiet bi RIENG cho Viber (khong dung Zalo/app khac). Change device tu dong xoa keychain + container + app-group SecureStorage de dang ky tai khoan moi nhu may vua cai lai. Lien he Telegram @houselis
+Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group SecureStorage de dang ky tai khoan moi nhu may vua cai lai. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ViberChange_4.1.2-double_iphoneos-arm64.deb
-Size: 217964
-MD5sum: f395b51008901529b997b4b86344c591
-SHA1: 928773afdf15aff4657354a99ecc1334f5b2cdc9
-SHA256: d876e4d86fed092fae2d0d1f08044fa2cd3169610d19be8b021f66a38012f8ec
+Filename: pool/main/ViberChange_1.1.9-7plus_iphoneos-arm64.deb
+Size: 218536
+MD5sum: 74426504b2c3d05bf5ea66fd487223f8
+SHA1: 0597112f31516fe007f34c9805ec09b0a508bfe7
+SHA256: 330c58b120f055803e917956fa0e234421d0c63edc4528ab0c6d229f8c6a3ce3
 
