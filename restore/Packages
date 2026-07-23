@@ -1,19 +1,18 @@
 Package: com.hiosrestore
 Name: HIOS Restore
-Version: 1.0.0
+Version: 1.0.1
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
 Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Conflicts: com.changeinfoios.v3, com.viberchange
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs da xuat tu HIOS Faker roi khoi phuc lai moi truong cu: du lieu ung dung cung dung ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @houselis
+Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs da xuat tu HIOS Faker roi khoi phuc lai moi truong cu: du lieu ung dung cung dung ho so thiet bi. Khong Change Device, khong reset. Cai chung may voi HIOS Faker / ViberChange duoc. Lien he Telegram @houselis
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/HIOSRestore_1.0.0_iphoneos-arm64.deb
-Size: 223616
-MD5sum: 894ffbfb2a091198ff2dacee9d94fcd0
-SHA1: 00ac804bc188ed0e72fea2ca22bcf7d5304f0420
-SHA256: 7b463a8a483c8959168588ba4adf2c17f1bc30d8e4a1e536da9c9faa17f71c17
+Filename: pool/main/HIOSRestore_1.0.1_iphoneos-arm64.deb
+Size: 224248
+MD5sum: 09c9c66221a46036a031af9bcb3a3a96
+SHA1: 64595a63ec16c88e813ab677b345837b25e7cc58
+SHA256: 617182219e3c5f54be1298d75a07d6f52849b1502d1f32150d4742f4f0cc1935
