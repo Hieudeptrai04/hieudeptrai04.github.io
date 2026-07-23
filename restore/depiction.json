@@ -1,0 +1,85 @@
+{
+  "minVersion": "0.1",
+  "class": "DepictionTabView",
+  "tintColor": "#2AABEE",
+  "tabs": [
+    {
+      "tabname": "Chi tiết",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "HIOS Restore",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Công cụ **chỉ để khôi phục**. Nhập file `.rrs` đã xuất từ HIOS Faker rồi khôi phục lại toàn bộ môi trường cũ: dữ liệu ứng dụng cùng đúng hồ sơ thiết bị lúc đăng ký.\n\nKhông có Change Device, không random danh tính, không xoá dữ liệu.",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Cách dùng"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "1. Máy chính (HIOS Faker 4.2.8+): tab **RRS** → **Xuất** → chọn snapshot.\n2. Chép file `.rrs` sang máy này bằng Filza hoặc AirDrop, bỏ vào `/var/mobile/Documents/HIOS_RRS/`.\n3. Mở HIOS Restore → **Nhập file .rrs** → chạm vào dòng đó để **Restore**.",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Lưu ý"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Không cài chung máy với HIOS Faker v3 hoặc ViberChange — ba bản dùng chung một nơi lưu cấu hình nên sẽ tranh nhau.",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Yêu cầu"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Dopamine 2 (rootless) · ellekit · iOS 15.0+",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Liên hệ Telegram: @houselis",
+          "action": "https://t.me/houselis",
+          "openExternal": true,
+          "tintColor": "#2AABEE"
+        }
+      ]
+    },
+    {
+      "tabname": "Thay đổi",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Bản đầu tiên\n- Nhập và khôi phục file `.rrs`\n- Khôi phục kèm hồ sơ thiết bị, không đổi danh tính",
+          "useSpacing": true
+        }
+      ]
+    }
+  ]
+}

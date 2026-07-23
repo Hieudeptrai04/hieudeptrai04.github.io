@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIOS Restore</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 640px;
+         margin: 0 auto; padding: 24px; background: #1a1a1a; color: #eee; line-height: 1.55; }
+  h1 { color: #2AABEE; margin-bottom: 4px; }
+  h2 { color: #2AABEE; font-size: 1.05em; margin-top: 28px; border-bottom: 1px solid #333; padding-bottom: 6px; }
+  a { color: #2AABEE; text-decoration: none; }
+  code { background: #2a2a2a; padding: 2px 7px; border-radius: 5px; font-size: .9em; }
+  ul, ol { padding-left: 20px; } li { margin: 4px 0; }
+  .tg { display: inline-block; background: #2AABEE; color: #fff; padding: 10px 20px;
+        border-radius: 8px; margin-top: 16px; font-weight: 600; }
+  .req { color: #aaa; font-size: .92em; }
+  .warn { background: #2a2118; border-left: 3px solid #FF8C00; padding: 10px 14px; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <h1>HIOS Restore</h1>
+  <p>Công cụ <strong>chỉ để khôi phục</strong>. Nhập file <code>.rrs</code> đã xuất từ HIOS Faker rồi khôi phục lại toàn bộ môi trường cũ: dữ liệu ứng dụng cùng đúng hồ sơ thiết bị lúc đăng ký.</p>
+  <p>Không có Change Device, không random danh tính, không xoá dữ liệu.</p>
+
+  <h2>Cách dùng</h2>
+  <ol>
+    <li>Máy chính (HIOS Faker 4.2.8+): tab <strong>RRS</strong> → <strong>Xuất</strong> → chọn snapshot.</li>
+    <li>Chép file <code>.rrs</code> sang máy này bằng Filza hoặc AirDrop, bỏ vào <code>/var/mobile/Documents/HIOS_RRS/</code>.</li>
+    <li>Mở HIOS Restore → <strong>Nhập file .rrs</strong> → chạm vào dòng đó để <strong>Restore</strong>.</li>
+  </ol>
+
+  <h2>Lưu ý</h2>
+  <p class="warn">Không cài chung máy với HIOS Faker v3 hoặc ViberChange — ba bản dùng chung một nơi lưu cấu hình nên sẽ tranh nhau.</p>
+
+  <h2>Yêu cầu</h2>
+  <p class="req">Dopamine 2 (rootless) · ellekit · iOS 15.0+</p>
+
+  <a class="tg" href="https://t.me/houselis">Liên hệ Telegram: @houselis</a>
+</body>
+</html>
