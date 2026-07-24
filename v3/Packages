@@ -57,44 +57,6 @@ SHA256: 8a66d91f267fb526c21a3ede79c342f790c396f15a06c929916d6c14c81a08ef
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.2.6
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.2.6_iphoneos-arm64.deb
-Size: 218752
-MD5sum: c5d0b4e88e0d036e96c6d8bc242f5a42
-SHA1: 2b133a0cd6a982b502151268b3cc47b5982616a0
-SHA256: 7d52c33f987e14b71e608f905b52ac9b414ea4b2743e444d14c65872163f4799
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.2.8
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.2.8_iphoneos-arm64.deb
-Size: 225024
-MD5sum: 9226bfb3be062edfaae477f269c6d864
-SHA1: ee70b8b53b4779c52cf411475cfb5ddde608120e
-SHA256: 1c40029a024e07ba98903afac7c3a429baef407f94eebce0d22926732d817a3c
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
 Version: 4.2.9
 Architecture: iphoneos-arm64
 Section: Tweaks
