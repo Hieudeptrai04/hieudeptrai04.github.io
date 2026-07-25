@@ -57,7 +57,7 @@ SHA256: 8a66d91f267fb526c21a3ede79c342f790c396f15a06c929916d6c14c81a08ef
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.3.0
+Version: 4.3.1
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -68,8 +68,8 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.0_iphoneos-arm64.deb
-Size: 228236
-MD5sum: b610b20331d39243526cfd1aa63d7dba
-SHA1: aa76c430886267e2ebeeb912394a55a2996bcacd
-SHA256: 4cec1cdf1e0af6bff3ccc19caa02a78b32df0a24a10db8f8a3bec29109674002
+Filename: pool/main/ChangeInfoIos-v3_4.3.1_iphoneos-arm64.deb
+Size: 229292
+MD5sum: f637109f16b62ab53650b9f339a11045
+SHA1: db42301d3c9d687a1490961ac14af7dab533a642
+SHA256: 228a39a6b469acf04732834389279645b659b0a74dc7b10ab048231b0026708b

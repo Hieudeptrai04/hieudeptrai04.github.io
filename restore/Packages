@@ -1,6 +1,6 @@
 Package: com.hiosrestore
 Name: HIOS Restore
-Version: 1.0.4
+Version: 1.0.5
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -11,8 +11,8 @@ Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/HIOSRestore_1.0.4_iphoneos-arm64.deb
-Size: 226760
-MD5sum: 8a74e17b4210cc8f6ec47aae8ab89076
-SHA1: 4fb9ac22d9538e5692e62acde67f5b2d3ee224af
-SHA256: 6ea11499679859a8fdc3a378f552863f1a87ec50248bfaa006ecff487a22e787
+Filename: pool/main/HIOSRestore_1.0.5_iphoneos-arm64.deb
+Size: 228124
+MD5sum: 686a38d8c5f4b9c3e8e01a08782cf329
+SHA1: d921b455c8be7f89e2bc8ba1c421ec6a6e13388d
+SHA256: 3e325b3de66db6e79e05a494e2f8143e41fc519561c16dffa31dac91e872ee90
