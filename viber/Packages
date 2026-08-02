@@ -1,6 +1,5 @@
 Package: com.viberchange
 Name: ViberChange
-Version: 1.1.12
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: ViberChange
@@ -9,6 +8,7 @@ Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
 Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group SecureStorage de dang ky tai khoan moi nhu may vua cai lai.
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 Tag: purpose::extension, compatible::dopamine
+Version: 1.1.12
 Filename: pool/main/ViberChange_1.1.12_iphoneos-arm64.deb
 Size: 218248
 MD5sum: 7e6bec77679e9a588d604f39c5afeeec
@@ -17,7 +17,6 @@ SHA256: 1d730a04ce2857d0b04ee45707fe9b0e4017c90633ff44b2b94c88ee10d47f71
 
 Package: com.viberchange
 Name: ViberChange
-Version: 1.1.14
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: ViberChange
@@ -26,6 +25,7 @@ Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
 Description: ViberChange - doi thong tin thiet bi RIENG cho Viber. Change device tu dong xoa keychain (ke ca item dong bo iCloud) + container + app-group SecureStorage de dang ky tai khoan moi nhu may vua cai lai.
 Icon: https://hieudeptrai04.github.io/v3/icon.png
 Tag: purpose::extension, compatible::dopamine
+Version: 1.1.14
 Filename: pool/main/ViberChange_1.1.14_iphoneos-arm64.deb
 Size: 218344
 MD5sum: 361b416589866f7770822901c63b2bd2
