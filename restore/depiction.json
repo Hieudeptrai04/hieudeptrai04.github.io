@@ -59,8 +59,8 @@
         },
         {
           "class": "DepictionTableButtonView",
-          "title": "Liên hệ Telegram: @houselis",
-          "action": "https://t.me/houselis",
+          "title": "Liên hệ Telegram: @minhvictor",
+          "action": "https://t.me/minhvictor",
           "openExternal": true,
           "tintColor": "#2AABEE"
         }

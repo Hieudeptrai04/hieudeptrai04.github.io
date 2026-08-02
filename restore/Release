@@ -1,8 +1,8 @@
 Origin: HIOS Restore
 Label: HIOS Restore
 Suite: stable
-Version: 1.0.5
+Version: 1.0.6
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
-Description: HIOS Restore - cong cu chi de khoi phuc file .rrs. Telegram @houselis
+Description: HIOS Restore - cong cu chi de khoi phuc file .rrs. Telegram @minhvictor
