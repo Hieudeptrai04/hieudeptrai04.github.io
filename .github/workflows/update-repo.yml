@@ -90,7 +90,10 @@ jobs:
             fi
             mv "$D/Packages.new" "$D/Packages"
 
-            gzip -9 -kf "$D/Packages"
+            # -n omits the source filename AND mtime from the gzip header.
+            # Without it every run produces different bytes for identical input,
+            # so the job commits a no-op .gz change on every single push.
+            gzip -9 -n -kf "$D/Packages"
             # Only .gz is served; a stale .bz2 would be an index that disagrees
             # with Packages, so make sure one can't linger.
             rm -f "$D/Packages.bz2"
