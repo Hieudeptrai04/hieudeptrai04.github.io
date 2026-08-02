@@ -1,128 +1,117 @@
 name: Update APT Repo
 
+# Rebuilds each Sileo source's index FROM THE .deb FILES ALREADY IN ITS POOL.
+#
+# The previous version pulled releases out of the private Hieudeptrai04/HIOS-Faker
+# repo. That could never work: no SRC_TOKEN secret is configured, so it fell back
+# to this repo's GITHUB_TOKEN, which has no access to a different private repo —
+# the API returned an error object, jq choked on it and the run died. Every push
+# had been failing for weeks.
+#
+# Worse, had it ever succeeded it would have DELETED the current release: its
+# hardcoded KEEP list was "4.0.8-fix2 4.1.0 4.2.0" and step 2 purged any pooled
+# .deb outside that list, so 4.3.1 would have been wiped from Sileo within the
+# 4-hourly cron.
+#
+# So the release-mirroring is gone. Publishing is done by pushing the .deb into
+# pool/main; this job's only job is to make the index describe exactly what is
+# in the pool. That is worth having on its own — a hand-written Packages once
+# shipped a Filename that did not match the uploaded .deb, which is precisely
+# the class of bug this catches.
+#
+# Two rules keep it safe:
+#   * Shared metadata (Package/Name/Author/Description/Icon/Depiction/…) is
+#     INHERITED from the first stanza of the existing Packages file, never
+#     hardcoded here. This file therefore cannot make v3 and restore drift apart
+#     or undo a contact change.
+#   * It only ever adds/refreshes stanzas. It never deletes a .deb, and it
+#     refuses to write an index with no packages in it.
+
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: '0 */4 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch latest v3 release and build APT repo
-        env:
-          # Use a PAT if set; otherwise the auto GITHUB_TOKEN so the
-          # api.github.com calls are AUTHENTICATED. Anonymous calls share a
-          # 60/hr IP limit and were getting rate-limited (empty response →
-          # grep finds no tag → set -e aborts the run in ~90ms).
-          SRC_TOKEN: ${{ secrets.SRC_TOKEN || github.token }}
+      - name: Rebuild indexes from pool
         run: |
           set -euo pipefail
-          API="https://api.github.com/repos/Hieudeptrai04/HIOS-Faker"
-          AUTH=()
-          if [ -n "${SRC_TOKEN:-}" ]; then AUTH=(-H "Authorization: token $SRC_TOKEN"); fi
 
-          # Publish ONLY the curated KEEP set — single source of truth for what
-          # appears in Sileo. Add a version to publish it; remove it to delete it.
-          # (GitHub keeps every release, and /releases isn't version-sorted, so we
-          # don't rely on "latest"; we explicitly list what to mirror.)
-          KEEP="4.0.8-fix2 4.1.0 4.2.0"
-          RELEASES=$(curl -sL "${AUTH[@]}" "$API/releases?per_page=100")
-          TAGS=$(echo "$RELEASES" | jq -r '.[].tag_name' | grep '^v3-' || true)
-          if [ -z "$TAGS" ]; then
-            echo "No v3 release found (private repo without SRC_TOKEN?)"; exit 1
-          fi
-          mkdir -p v3/pool/main
-          # 1) download each KEEP version not already in the pool
-          for TAG in $TAGS; do
-            VER=$(echo "$TAG" | sed 's/^v3-\(.*\)-[0-9a-f]\{7,\}$/\1/')
-            [ -z "$VER" ] && continue
-            case " $KEEP " in *" $VER "*) ;; *) continue;; esac
-            DEBFN="ChangeInfoIos-v3_${VER}_iphoneos-arm64.deb"
-            [ -f "v3/pool/main/$DEBFN" ] && { echo "have $VER"; continue; }
-            REL=$(curl -sL "${AUTH[@]}" "$API/releases/tags/$TAG")
-            ASSET_URL=$(echo "$REL" | jq -r '.assets[] | select(.name|endswith(".deb")) | .url' | head -1)
-            if [ -n "$ASSET_URL" ] && [ "$ASSET_URL" != "null" ]; then
-              curl -fsSL "${AUTH[@]}" -H "Accept: application/octet-stream" "$ASSET_URL" -o "v3/pool/main/$DEBFN"
-              echo "added $VER"
+          for D in v3 restore viber; do
+            echo "=== $D ==="
+            if [ ! -d "$D/pool/main" ]; then echo "  skip: no pool"; continue; fi
+            if ! ls "$D"/pool/main/*.deb >/dev/null 2>&1; then echo "  skip: no .deb in pool"; continue; fi
+            if [ ! -f "$D/Packages" ]; then echo "  skip: no existing Packages to inherit metadata from"; continue; fi
+
+            # Shared metadata = first stanza minus the per-deb fields.
+            FIRST=$(sed -n '1,/^$/p' "$D/Packages")
+            TPL=$(printf '%s\n' "$FIRST" \
+                  | grep -vE '^(Version|Filename|Size|MD5sum|SHA1|SHA256):' \
+                  | grep -v '^[[:space:]]*$' || true)
+            if [ -z "$TPL" ]; then echo "  skip: could not read metadata template"; continue; fi
+
+            : > "$D/Packages.new"
+            SEP=0
+            VERLIST=""
+            # sort -V so Sileo lists versions in a sane order
+            for DEB in $(ls "$D"/pool/main/*.deb | sort -V); do
+              BN=$(basename "$DEB")
+              VER=$(dpkg-deb -f "$DEB" Version 2>/dev/null || true)
+              if [ -z "$VER" ]; then echo "  !! unreadable, skipped: $BN"; continue; fi
+              # NOT `[ ... ] && printf`: under `set -e` a bare AND-list that
+              # evaluates false is a failing statement and kills the run on the
+              # very first package.
+              if [ "$SEP" -eq 1 ]; then printf '\n' >> "$D/Packages.new"; fi
+              SEP=1
+              printf '%s\n' "$TPL" >> "$D/Packages.new"
+              printf 'Version: %s\n'          "$VER"                              >> "$D/Packages.new"
+              printf 'Filename: pool/main/%s\n' "$BN"                             >> "$D/Packages.new"
+              printf 'Size: %s\n'             "$(stat -c%s "$DEB")"               >> "$D/Packages.new"
+              printf 'MD5sum: %s\n'           "$(md5sum   "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
+              printf 'SHA1: %s\n'             "$(sha1sum  "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
+              printf 'SHA256: %s\n'           "$(sha256sum "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
+              VERLIST="$VERLIST $VER"
+              echo "  indexed $VER ($BN)"
+            done
+
+            # Never replace a good index with an empty one.
+            if ! grep -q '^Package: ' "$D/Packages.new"; then
+              echo "  !! refusing to publish an empty index"
+              rm -f "$D/Packages.new"
+              continue
+            fi
+            mv "$D/Packages.new" "$D/Packages"
+
+            gzip -9 -kf "$D/Packages"
+            # Only .gz is served; a stale .bz2 would be an index that disagrees
+            # with Packages, so make sure one can't linger.
+            rm -f "$D/Packages.bz2"
+
+            NEWEST=$(printf '%s\n' $VERLIST | sort -V | tail -1)
+            if [ -f "$D/Release" ] && [ -n "$NEWEST" ]; then
+              sed -i "s|^Version: .*|Version: $NEWEST|" "$D/Release"
+              echo "  Release Version -> $NEWEST"
             fi
           done
-          # 2) purge any pool deb whose version is NOT in KEEP
-          for DEB in v3/pool/main/*.deb; do
-            [ -f "$DEB" ] || continue
-            DV=$(basename "$DEB" | sed -n 's/^ChangeInfoIos-v3_\(.*\)_iphoneos-arm64.deb$/\1/p')
-            case " $KEEP " in *" $DV "*) ;; *) rm -f "$DEB"; echo "purged $DV";; esac
-          done
-          # newest version (by version sort) — only used for the Release file
-          VERSION=$(ls v3/pool/main/ 2>/dev/null | sed -n 's/^ChangeInfoIos-v3_\(.*\)_iphoneos-arm64.deb$/\1/p' | sort -V | tail -1)
 
-          # 4. Packages — one stanza per .deb present in the pool (multi-version).
-          #    Version/Filename/Size/hashes come from each deb; the rest is shared
-          #    metadata. printf only (heredocs break under YAML block indentation).
-          : > v3/Packages
-          for DEB in v3/pool/main/*.deb; do
-            [ -f "$DEB" ] || continue
-            BN=$(basename "$DEB")
-            VER=$(dpkg-deb -f "$DEB" Version 2>/dev/null || true)
-            [ -z "$VER" ] && VER="$VERSION"
-            SIZE=$(stat -c%s "$DEB")
-            MD5=$(md5sum      "$DEB" | awk '{print $1}')
-            SHA1=$(sha1sum    "$DEB" | awk '{print $1}')
-            SHA256=$(sha256sum "$DEB" | awk '{print $1}')
-            printf '%s\n' \
-              "Package: com.changeinfoios.v3" \
-              "Name: HIOS Faker v3" \
-              "Version: $VER" \
-              "Architecture: iphoneos-arm64" \
-              "Section: Tweaks" \
-              "Author: houselis <https://t.me/houselis>" \
-              "Maintainer: houselis <https://t.me/houselis>" \
-              "Depends: ellekit | mobilesubstrate, firmware (>= 15.0)" \
-              "Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis" \
-              "Icon: https://hieudeptrai04.github.io/v3/icon.png" \
-              "SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json" \
-              "Depiction: https://hieudeptrai04.github.io/v3/depiction.html" \
-              "Tag: purpose::extension, compatible::dopamine" \
-              "Filename: pool/main/$BN" \
-              "Size: $SIZE" \
-              "MD5sum: $MD5" \
-              "SHA1: $SHA1" \
-              "SHA256: $SHA256" \
-              "" >> v3/Packages
-          done
-          bzip2 -kf v3/Packages
-          gzip  -kf v3/Packages
-
-          # 5. Release — Version reflects the newest published version.
-          printf '%s\n' \
-            "Origin: HIOS Faker" \
-            "Label: HIOS Faker v3" \
-            "Suite: stable" \
-            "Version: $VERSION" \
-            "Codename: ios" \
-            "Architectures: iphoneos-arm64" \
-            "Components: main" \
-            "Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Telegram @houselis" > v3/Release
-
-          echo "$TAG" > v3/VERSION
-
-          # 6. Commit only if something changed (no early-exit, so script
-          #    edits always re-apply; empty-diff guard prevents noise commits)
+      - name: Commit if the index changed
+        run: |
+          set -euo pipefail
           git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          git add -A v3/
+          git config user.name  "GitHub Actions"
+          git add -A v3 restore viber
           if git diff --cached --quiet; then
-            echo "No changes to publish."
+            echo "Index already matches the pool — nothing to commit."
           else
-            git commit -m "repo: v3 $VERSION ($TAG) — keep all versions"
+            git commit -m "repo: rebuild Packages/Release from pool"
             git push
-            echo "Live: https://hieudeptrai04.github.io/v3/"
+            echo "Live: https://hieudeptrai04.github.io/"
           fi
-
-# multi-version repo: new releases ADD a version, never replace 3.3.5
