@@ -1,7 +1,7 @@
 Origin: HIOS Restore
 Label: HIOS Restore
 Suite: stable
-Version: 1.0.9
+Version: 1.0.10
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
