@@ -16,3 +16,23 @@ Size: 228020
 MD5sum: 58be9275bcfa1c836ac07d7a59dedfac
 SHA1: 7fde479bc85da2fd51ceaf0d2b92ec00929b4fb5
 SHA256: fde7eb630614d0e9fc2b7f59c57ec8abef62ef4d88eaf44381aa76c699324d82
+
+Package: com.hiosrestore
+Name: HIOS Restore
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: minhvictor <https://t.me/minhvictor>
+Maintainer: minhvictor <https://t.me/minhvictor>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
+Icon: https://hieudeptrai04.github.io/restore/icon.png
+SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
+Depiction: https://hieudeptrai04.github.io/restore/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Version: 1.0.7
+Filename: pool/main/HIOSRestore_1.0.7_iphoneos-arm64.deb
+Size: 231912
+MD5sum: 303e25c3ec6c24889b40379a81a81d1e
+SHA1: 5e4add0326d6dd6078fb72257f54dad63d545610
+SHA256: 010879746f80b9b5e8845350d780b487943ca7ef720ece4101f9da3730e8bae8
+
