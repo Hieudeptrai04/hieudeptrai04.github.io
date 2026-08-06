@@ -1,6 +1,5 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.0.8-fix2
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -11,6 +10,7 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.0.8-fix2
 Filename: pool/main/ChangeInfoIos-v3_4.0.8-fix2_iphoneos-arm64.deb
 Size: 212908
 MD5sum: f4e2af0c193a58cd5b5f23e00543db50
@@ -19,7 +19,6 @@ SHA256: 37ee9bdda72e3bfdcb543e1ba2f3c9b37d7325b9d0ae0964f0105729c1350b1b
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.1.0
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -30,6 +29,7 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.1.0
 Filename: pool/main/ChangeInfoIos-v3_4.1.0_iphoneos-arm64.deb
 Size: 214372
 MD5sum: 96d089330bc24b6fc9976ff9d740f023
@@ -38,7 +38,6 @@ SHA256: 85350ac440a5d60913cc971679d8cf42262afb10b19b441e6a7f3c9b0e3e71ae
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.2.0
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -49,6 +48,7 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.2.0
 Filename: pool/main/ChangeInfoIos-v3_4.2.0_iphoneos-arm64.deb
 Size: 217236
 MD5sum: 3b0c65042201185a681b5fec6f415ecf
@@ -57,7 +57,6 @@ SHA256: 8a66d91f267fb526c21a3ede79c342f790c396f15a06c929916d6c14c81a08ef
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.3.11
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -68,28 +67,28 @@ Icon: https://hieudeptrai04.github.io/v3/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
 Depiction: https://hieudeptrai04.github.io/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.11_iphoneos-arm64.deb
-Size: 235724
-MD5sum: b3f0d62b8fdde03d2eb35396999839a9
-SHA1: dbb7d33c1c6c8cb1ca3aa17a2ea89d4049e1492a
-SHA256: f91649a7514ffdad939605d3b5ccb8bb313539367981f37a7795404e5b800361
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
 Version: 4.3.1
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
-Icon: https://hieudeptrai04.github.io/v3/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
-Depiction: https://hieudeptrai04.github.io/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
 Filename: pool/main/ChangeInfoIos-v3_4.3.1_iphoneos-arm64.deb
 Size: 229292
 MD5sum: f637109f16b62ab53650b9f339a11045
 SHA1: db42301d3c9d687a1490961ac14af7dab533a642
 SHA256: 228a39a6b469acf04732834389279645b659b0a74dc7b10ab048231b0026708b
 
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Icon: https://hieudeptrai04.github.io/v3/icon.png
+SileoDepiction: https://hieudeptrai04.github.io/v3/depiction.json
+Depiction: https://hieudeptrai04.github.io/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Version: 4.3.11
+Filename: pool/main/ChangeInfoIos-v3_4.3.11_iphoneos-arm64.deb
+Size: 235724
+MD5sum: b3f0d62b8fdde03d2eb35396999839a9
+SHA1: dbb7d33c1c6c8cb1ca3aa17a2ea89d4049e1492a
+SHA256: f91649a7514ffdad939605d3b5ccb8bb313539367981f37a7795404e5b800361
