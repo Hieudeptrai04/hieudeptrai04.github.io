@@ -10,25 +10,6 @@ Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.10
-Filename: pool/main/HIOSRestore_1.0.10_iphoneos-arm64.deb
-Size: 232420
-MD5sum: 79389600512b4c00f1ca953530c3ae15
-SHA1: 6061b180c7175b3fab374cc17dc0eea4a45acd44
-SHA256: f0ffc0a3ee5f40c9b22778777ade04dbf7ed21da0d81ca7aab2f9d94fc600967
-
-Package: com.hiosrestore
-Name: HIOS Restore
-Architecture: iphoneos-arm64
-Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
-Icon: https://hieudeptrai04.github.io/restore/icon.png
-SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
-Depiction: https://hieudeptrai04.github.io/restore/depiction.html
-Tag: purpose::extension, compatible::dopamine
 Version: 1.0.6
 Filename: pool/main/HIOSRestore_1.0.6_iphoneos-arm64.deb
 Size: 228020
@@ -55,3 +36,21 @@ MD5sum: 303e25c3ec6c24889b40379a81a81d1e
 SHA1: 5e4add0326d6dd6078fb72257f54dad63d545610
 SHA256: 010879746f80b9b5e8845350d780b487943ca7ef720ece4101f9da3730e8bae8
 
+Package: com.hiosrestore
+Name: HIOS Restore
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: minhvictor <https://t.me/minhvictor>
+Maintainer: minhvictor <https://t.me/minhvictor>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
+Icon: https://hieudeptrai04.github.io/restore/icon.png
+SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
+Depiction: https://hieudeptrai04.github.io/restore/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Version: 1.0.10
+Filename: pool/main/HIOSRestore_1.0.10_iphoneos-arm64.deb
+Size: 232420
+MD5sum: 79389600512b4c00f1ca953530c3ae15
+SHA1: 6061b180c7175b3fab374cc17dc0eea4a45acd44
+SHA256: f0ffc0a3ee5f40c9b22778777ade04dbf7ed21da0d81ca7aab2f9d94fc600967
