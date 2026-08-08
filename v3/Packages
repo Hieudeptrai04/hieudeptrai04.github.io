@@ -1,6 +1,5 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.1.0
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -11,6 +10,7 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.1.0
 Filename: pool/main/ChangeInfoIos-v3_4.1.0_iphoneos-arm64.deb
 Size: 214372
 MD5sum: 96d089330bc24b6fc9976ff9d740f023
@@ -19,7 +19,6 @@ SHA256: 85350ac440a5d60913cc971679d8cf42262afb10b19b441e6a7f3c9b0e3e71ae
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.2.0
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -30,6 +29,7 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.2.0
 Filename: pool/main/ChangeInfoIos-v3_4.2.0_iphoneos-arm64.deb
 Size: 217236
 MD5sum: 3b0c65042201185a681b5fec6f415ecf
@@ -38,7 +38,6 @@ SHA256: 8a66d91f267fb526c21a3ede79c342f790c396f15a06c929916d6c14c81a08ef
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.3.17
 Architecture: iphoneos-arm64
 Section: Tweaks
 Author: houselis <https://t.me/houselis>
@@ -49,9 +48,9 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
+Version: 4.3.17
 Filename: pool/main/ChangeInfoIos-v3_4.3.17_iphoneos-arm64.deb
 Size: 241936
 MD5sum: 9530b388eab678635744d47f8026c20a
 SHA1: d06fd1363c06b2be51bbc10e1ec907f0f27463a6
 SHA256: 8602697c79a1a86cf1a558ea41baf20b9c99f2079fc9895b2666723a42a1c9fa
-
