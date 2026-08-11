@@ -35,3 +35,22 @@ Size: 243864
 MD5sum: 3fe20c9543a7530db0bd23036135f9fc
 SHA1: 310cb7c3b385c0a74ea26fb1dd276e0ff4af9a1e
 SHA256: 44de20c35f9aae0753a3dc851b7bef9d05f1c490a1fbc76c44ada691274ca6cc
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Icon: https://zalosuper.net/v3/icon.png
+SileoDepiction: https://zalosuper.net/v3/depiction.json
+Depiction: https://zalosuper.net/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Version: 4.3.22
+Filename: pool/main/ChangeInfoIos-v3_4.3.22_iphoneos-arm64.deb
+Size: 248768
+MD5sum: fc59c5e629ad443a4e843ca4e4b21700
+SHA1: 428642a244d90beeaa4c129b3fbf5d99bcc7b7e5
+SHA256: 686cfede05f1775600a15aaa7bca110f96ebe838af028f77903db55504be00ca
