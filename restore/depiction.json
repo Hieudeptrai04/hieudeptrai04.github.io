@@ -27,7 +27,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "1. Máy chính (HIOS Faker 4.2.8+): tab **RRS** → **Xuất** → chọn snapshot.\n2. Chép file `.rrs` sang máy này bằng Filza hoặc AirDrop, bỏ vào `/var/mobile/Documents/HIOS_RRS/`.\n3. Mở HIOS Restore → **Nhập file .rrs** → chạm vào dòng đó để **Restore**.",
+          "markdown": "1. Máy chính (HIOS Faker 4.3.31+): tab **RRS** → **Xuất** → chọn snapshot.\n2. Chép file `.rrs` sang máy này bằng Filza hoặc AirDrop, bỏ vào `/var/mobile/Documents/HIOS_RRS/`.\n3. Mở HIOS Restore → **Nhập file .rrs** → chạm vào dòng đó để **Restore**.",
           "useSpacing": true
         },
         {
@@ -70,6 +70,15 @@
       "tabname": "Thay đổi",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.11"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Khôi phục đồng bộ dữ liệu ứng dụng, AppGroup và keychain\n- Sửa lỗi lần restore đầu bị yêu cầu đăng nhập, phải restore lần hai\n- Tương thích đầy đủ với file RRS từ HIOS Faker 4.3.31+",
+          "useSpacing": true
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.0.0"

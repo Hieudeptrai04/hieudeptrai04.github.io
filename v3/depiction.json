@@ -60,6 +60,15 @@
       "views": [
         {
           "class": "DepictionHeaderView",
+          "title": "4.3.31"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Xuất RRS kèm đầy đủ dữ liệu ứng dụng, AppGroup, keychain và hồ sơ thiết bị\n- Không xuất snapshot đăng nhập khi dữ liệu bắt buộc còn thiếu\n- Đồng bộ quy trình restore một lần với HIOS Restore 1.0.11",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "4.0.4"
         },
         {
