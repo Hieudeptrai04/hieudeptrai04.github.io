@@ -60,6 +60,15 @@
       "views": [
         {
           "class": "DepictionHeaderView",
+          "title": "4.3.32"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Sửa lỗi chọn Viber nhưng Backup + Reset báo chưa tạo được snapshot\n- Đọc và xác thực keychain Viber an toàn giữa các container\n- Luôn đóng gói đúng Data/AppGroup đang hoạt động, tránh UUID cũ\n- Bỏ thời gian chờ keychain dư của Safari, Maps và Weather",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "4.3.31"
         },
         {
