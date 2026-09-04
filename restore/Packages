@@ -1,16 +1,16 @@
 Package: com.hiosrestore
 Name: HIOS Restore
+Version: 1.0.6
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.6
 Filename: pool/main/HIOSRestore_1.0.6_iphoneos-arm64.deb
 Size: 228020
 MD5sum: 58be9275bcfa1c836ac07d7a59dedfac
@@ -19,17 +19,17 @@ SHA256: fde7eb630614d0e9fc2b7f59c57ec8abef62ef4d88eaf44381aa76c699324d82
 
 Package: com.hiosrestore
 Name: HIOS Restore
+Version: 1.0.7
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.7
 Filename: pool/main/HIOSRestore_1.0.7_iphoneos-arm64.deb
 Size: 231912
 MD5sum: 303e25c3ec6c24889b40379a81a81d1e
@@ -38,17 +38,17 @@ SHA256: 010879746f80b9b5e8845350d780b487943ca7ef720ece4101f9da3730e8bae8
 
 Package: com.hiosrestore
 Name: HIOS Restore
+Version: 1.0.10
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.10
 Filename: pool/main/HIOSRestore_1.0.10_iphoneos-arm64.deb
 Size: 232420
 MD5sum: 79389600512b4c00f1ca953530c3ae15
@@ -57,17 +57,17 @@ SHA256: f0ffc0a3ee5f40c9b22778777ade04dbf7ed21da0d81ca7aab2f9d94fc600967
 
 Package: com.hiosrestore
 Name: HIOS Restore
+Version: 1.0.11
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.11
 Filename: pool/main/HIOSRestore_1.0.11_iphoneos-arm64.deb
 Size: 245552
 MD5sum: 05d8172a7640c78d1cbda3f8d5536414
@@ -76,17 +76,17 @@ SHA256: 3e685c21a9703f50c0d71b08d011b5299af8b63ef7803fa6affd794e81cdd951
 
 Package: com.hiosrestore
 Name: HIOS Restore
+Version: 1.0.12
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: minhvictor <https://t.me/minhvictor>
-Maintainer: minhvictor <https://t.me/minhvictor>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Restore - cong cu chi de khoi phuc. Nhap file .rrs (tu thu muc chia se hoac ung dung Tep) roi khoi phuc lai moi truong cu: du lieu ung dung + app-group (giu login) + ho so thiet bi. Khong Change Device, khong reset. Lien he Telegram @minhvictor
 Icon: https://hieudeptrai04.github.io/restore/icon.png
 SileoDepiction: https://hieudeptrai04.github.io/restore/depiction.json
 Depiction: https://hieudeptrai04.github.io/restore/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.12
 Filename: pool/main/HIOSRestore_1.0.12_iphoneos-arm64.deb
 Size: 248384
 MD5sum: 998a83bf5a9d4e6c3df87e9c3affdbae

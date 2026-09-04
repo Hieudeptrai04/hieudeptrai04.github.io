@@ -1,16 +1,19 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 4.3.21
 Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
 Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
 Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 4.3.21
 Filename: pool/main/ChangeInfoIos-v3_4.3.21_iphoneos-arm64.deb
 Size: 243864
 MD5sum: 3fe20c9543a7530db0bd23036135f9fc
@@ -19,17 +22,20 @@ SHA256: 44de20c35f9aae0753a3dc851b7bef9d05f1c490a1fbc76c44ada691274ca6cc
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 4.3.34
 Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
 Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
 Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 4.3.34
 Filename: pool/main/ChangeInfoIos-v3_4.3.34_iphoneos-arm64.deb
 Size: 279632
 MD5sum: 4806b878ec90e5e3f2734e7afbe5a192
@@ -38,17 +44,20 @@ SHA256: f51940019ff4c72ea2f9dfeb1e4c18a729386a67fee04ce72e9ca80f0004ae02
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 4.3.43
 Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into selected target apps through a runtime target allowlist. Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
 Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
 Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 4.3.43
 Filename: pool/main/ChangeInfoIos-v3_4.3.43_iphoneos-arm64.deb
 Size: 284672
 MD5sum: 9a2c08958a88c2b567f07ec104846ade
@@ -57,36 +66,39 @@ SHA256: 623accdcb8bad5ac96a284845fbf59b9e724994195b7631fbdd6ec4d94c6c30e
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 4.3.44
 Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into selected target apps through a runtime target allowlist. Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
 Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
 Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 4.3.44
 Filename: pool/main/ChangeInfoIos-v3_4.3.44_iphoneos-arm64.deb
 Size: 285224
 MD5sum: f3a23808ea6a90ea518ad487a425f7f5
 SHA1: 6ff59968225cc9a7578e7dd5c602f92dc8a9691b
 SHA256: 63cb67bde254027f988b28682175bb76217ff1d74af45e7a65d0b5ccf87ef326
 
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
+Package: com.hiosrestore
+Name: HIOS Restore
+Version: 1.0.13
 Architecture: iphoneos-arm64
+Description: HIOS Restore - restore-only companion. Imports an RRS archive and puts back the saved app containers plus the matching device profile. No Change Device, no reset.
+Maintainer: HIOSRestore
+Author: HIOSRestore
 Section: Tweaks
-Author: houselis <https://t.me/houselis>
-Maintainer: houselis <https://t.me/houselis>
 Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
 Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Version: 1.0.13
 Filename: pool/main/HIOSRestore_1.0.13_iphoneos-arm64.deb
 Size: 248304
 MD5sum: c57338cc7bba7d87f65cfac0fce93a5c
