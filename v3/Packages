@@ -73,3 +73,22 @@ Size: 285224
 MD5sum: f3a23808ea6a90ea518ad487a425f7f5
 SHA1: 6ff59968225cc9a7578e7dd5c602f92dc8a9691b
 SHA256: 63cb67bde254027f988b28682175bb76217ff1d74af45e7a65d0b5ccf87ef326
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Architecture: iphoneos-arm64
+Section: Tweaks
+Author: houselis <https://t.me/houselis>
+Maintainer: houselis <https://t.me/houselis>
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Description: HIOS Faker v3 - tien ich ca nhan hoa va quyen rieng tu. Quan ly tuy chon thiet bi theo tung ung dung va don du lieu ung dung tu mot noi. Nhe, muot nhu may that. Lien he Telegram @houselis
+Icon: https://zalosuper.net/v3/icon.png
+SileoDepiction: https://zalosuper.net/v3/depiction.json
+Depiction: https://zalosuper.net/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Version: 1.0.13
+Filename: pool/main/HIOSRestore_1.0.13_iphoneos-arm64.deb
+Size: 248304
+MD5sum: c57338cc7bba7d87f65cfac0fce93a5c
+SHA1: 8acba80ad3fe48b11afbf045f784e515f0b0dd23
+SHA256: 13a2fad00ef3327dfcaee189eea7fbb6f13ac7e46915c058afd3703616f3a116
