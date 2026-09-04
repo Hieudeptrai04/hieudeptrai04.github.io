@@ -51,12 +51,16 @@ jobs:
             if ! ls "$D"/pool/main/*.deb >/dev/null 2>&1; then echo "  skip: no .deb in pool"; continue; fi
             if [ ! -f "$D/Packages" ]; then echo "  skip: no existing Packages to inherit metadata from"; continue; fi
 
-            # Shared metadata = first stanza minus the per-deb fields.
+            # Presentation-only fields (Icon/Depiction/Tag) are shared across the
+            # source and are NOT carried in any .deb control, so inherit them from
+            # the first existing stanza. Everything that identifies a package
+            # (Package/Name/Version/Architecture/Section/Author/Maintainer/Depends/
+            # Description) is read PER-DEB from its own control — so one source can
+            # hold more than one package (e.g. com.changeinfoios.v3 AND
+            # com.hiosrestore) without the second inheriting the first's identity.
             FIRST=$(sed -n '1,/^$/p' "$D/Packages")
-            TPL=$(printf '%s\n' "$FIRST" \
-                  | grep -vE '^(Version|Filename|Size|MD5sum|SHA1|SHA256):' \
-                  | grep -v '^[[:space:]]*$' || true)
-            if [ -z "$TPL" ]; then echo "  skip: could not read metadata template"; continue; fi
+            PRESENT=$(printf '%s\n' "$FIRST" \
+                      | grep -E '^(Icon|SileoDepiction|Depiction|Tag|Homepage|Sponsor):' || true)
 
             : > "$D/Packages.new"
             SEP=0
@@ -64,22 +68,26 @@ jobs:
             # sort -V so Sileo lists versions in a sane order
             for DEB in $(ls "$D"/pool/main/*.deb | sort -V); do
               BN=$(basename "$DEB")
-              VER=$(dpkg-deb -f "$DEB" Version 2>/dev/null || true)
-              if [ -z "$VER" ]; then echo "  !! unreadable, skipped: $BN"; continue; fi
+              CTRL=$(dpkg-deb -f "$DEB" 2>/dev/null || true)   # full control block
+              PKG=$(printf '%s\n' "$CTRL" | sed -n 's/^Package: *//p' | head -1)
+              VER=$(printf '%s\n' "$CTRL" | sed -n 's/^Version: *//p' | head -1)
+              if [ -z "$PKG" ] || [ -z "$VER" ]; then echo "  !! unreadable, skipped: $BN"; continue; fi
               # NOT `[ ... ] && printf`: under `set -e` a bare AND-list that
               # evaluates false is a failing statement and kills the run on the
               # very first package.
               if [ "$SEP" -eq 1 ]; then printf '\n' >> "$D/Packages.new"; fi
               SEP=1
-              printf '%s\n' "$TPL" >> "$D/Packages.new"
-              printf 'Version: %s\n'          "$VER"                              >> "$D/Packages.new"
+              # This deb's own control (drop any index-only fields), then the shared
+              # presentation fields, then the computed index fields.
+              printf '%s\n' "$CTRL" | grep -vE '^(Filename|Size|MD5sum|SHA1|SHA256):' >> "$D/Packages.new"
+              if [ -n "$PRESENT" ]; then printf '%s\n' "$PRESENT" >> "$D/Packages.new"; fi
               printf 'Filename: pool/main/%s\n' "$BN"                             >> "$D/Packages.new"
               printf 'Size: %s\n'             "$(stat -c%s "$DEB")"               >> "$D/Packages.new"
               printf 'MD5sum: %s\n'           "$(md5sum   "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
               printf 'SHA1: %s\n'             "$(sha1sum  "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
               printf 'SHA256: %s\n'           "$(sha256sum "$DEB" | cut -d' ' -f1)" >> "$D/Packages.new"
               VERLIST="$VERLIST $VER"
-              echo "  indexed $VER ($BN)"
+              echo "  indexed $PKG $VER ($BN)"
             done
 
             # Never replace a good index with an empty one.
