@@ -79,13 +79,7 @@ jobs:
               SEP=1
               # This deb's own control (drop any index-only fields), then the shared
               # presentation fields, then the computed index fields.
-              # roothide: override Architecture in the index to iphoneos-arm64 so Sileo
-              # (which filters by device arch) shows the package. The .deb control keeps
-              # iphoneos-arm64-roothide so the roothide dpkg maps paths to $ROOTHIDE_APP_ROOT.
               CTRL_OUT=$(printf '%s\n' "$CTRL" | grep -vE '^(Filename|Size|MD5sum|SHA1|SHA256):')
-              if [ "$D" = "roothide" ]; then
-                CTRL_OUT=$(printf '%s\n' "$CTRL_OUT" | sed 's/^Architecture: .*/Architecture: iphoneos-arm64/')
-              fi
               printf '%s\n' "$CTRL_OUT" >> "$D/Packages.new"
               if [ -n "$PRESENT" ]; then printf '%s\n' "$PRESENT" >> "$D/Packages.new"; fi
               printf 'Filename: pool/main/%s\n' "$BN"                             >> "$D/Packages.new"
