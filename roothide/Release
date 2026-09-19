@@ -3,6 +3,6 @@ Label: HIOS Faker v3 Roothide
 Suite: stable
 Version: 4.3.48
 Codename: ios
-Architectures: iphoneos-arm64
+Architectures: iphoneos-arm64e
 Components: main
 Description: HIOS Faker v3 danh rieng cho Roothide JB (opa334). Telegram @houselis
