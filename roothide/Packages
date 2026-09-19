@@ -1,15 +1,15 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3 (Roothide)
-Version: 4.3.48
-Architecture: iphoneos-arm64
+Version: 4.3.49
+Architecture: iphoneos-arm64e
 Description: HIOS Faker v3 for Roothide jailbreak. MobileGestalt + CoreTelephony device-spoof injected into selected apps. Requires roothide bootstrap (opa334).
 Maintainer: ChangeInfoIos
 Author: @houselis
 Section: System
 Depends: firmware (>= 15.0)
 Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Filename: pool/main/ChangeInfoIos-v3-roothide_4.3.48_iphoneos-arm64.deb
-Size: 76496
-MD5sum: 50fdf3c9cfa21978d6f86345e9f6d7a3
-SHA1: 2902e2b9fd2b279b81bffc053c2b8699df6fa32f
-SHA256: 4e282c344eb4358e195a4fd9d724905b8666a587b3758d20a74b5201f0d7fb6e
+Filename: pool/main/ChangeInfoIos-v3-roothide_4.3.49_iphoneos-arm64e.deb
+Size: 76660
+MD5sum: dba0df9c95a88eb00e7c3a6b4be5f9b7
+SHA1: 98ef0d941a98181fc395dc41b761d39ced4557a1
+SHA256: 9f49030ad92a36debd054c320503957a65eed8c649e2ab9fca645711537586b1
