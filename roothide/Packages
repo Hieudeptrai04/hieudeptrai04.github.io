@@ -9,7 +9,7 @@ Section: Tweaks
 Depends: dev.roothide.roothide, ellekit | mobilesubstrate, firmware (>= 15.0)
 Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
 Filename: pool/main/ChangeInfoIos-v3-roothide_4.3.44_iphoneos-arm64-roothide.deb
-Size: 76684
-MD5sum: c7e8793dfb90e8485ef1f8d63b981f80
-SHA1: 0d3118844c35a08749eb9c79a497c5f7fc1a46bc
-SHA256: f73d7c6aead29b2270e82c590c244c64512de026c49002a5575f3e077b34ef8e
+Size: 76576
+MD5sum: c49e4149db56840823821bbac54b6e18
+SHA1: ed3a62711b0ba36d5cb41784434abd8ccaaa5a49
+SHA256: 474d9cd4b2af609246adbc62d996edcd4303a481ca4b28c1c19d1a59cb7a2172
