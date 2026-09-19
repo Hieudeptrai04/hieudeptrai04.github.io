@@ -6,10 +6,10 @@ Description: HIOS Faker v3 for Roothide jailbreak. MobileGestalt + CoreTelephony
 Maintainer: ChangeInfoIos
 Author: @houselis
 Section: System
-Depends: dev.roothide.roothide, org.coolstar.ellekit, firmware (>= 15.0)
+Depends: firmware (>= 15.0)
 Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
 Filename: pool/main/ChangeInfoIos-v3-roothide_4.3.44_iphoneos-arm64-roothide.deb
-Size: 76860
-MD5sum: 55a4e18d20ebaf57310cd803ae4e69df
-SHA1: 9f3f1df754fd62353d7219db95f52352ab05148d
-SHA256: 4ca368f1c8bd199deef977758c2a8f9dc53d6f5404e5e30044dfbc1176ea4ff9
+Size: 76644
+MD5sum: 5149f368916734f35b00ae50dda459af
+SHA1: 3c013f91d3231640f3aa420a415f4a59d14ffcf5
+SHA256: d5353eed83123a2347117c499e8f391f44018b83f31669c78c1b90239ee87e28
