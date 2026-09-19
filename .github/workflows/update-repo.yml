@@ -45,7 +45,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          for D in v3 restore viber; do
+          for D in v3 restore viber roothide; do
             echo "=== $D ==="
             if [ ! -d "$D/pool/main" ]; then echo "  skip: no pool"; continue; fi
             if ! ls "$D"/pool/main/*.deb >/dev/null 2>&1; then echo "  skip: no .deb in pool"; continue; fi
@@ -118,7 +118,7 @@ jobs:
           set -euo pipefail
           git config user.email "actions@github.com"
           git config user.name  "GitHub Actions"
-          git add -A v3 restore viber
+          git add -A v3 restore viber roothide
           if git diff --cached --quiet; then
             echo "Index already matches the pool — nothing to commit."
           else
