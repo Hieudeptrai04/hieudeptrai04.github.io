@@ -1,0 +1,48 @@
+{
+  "minVersion": "0.1",
+  "class": "DepictionTabView",
+  "tintColor": "#FF8C00",
+  "tabs": [
+    {
+      "tabname": "Chi tiết",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "HIOS Faker v3 — Roothide",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Bản dành riêng cho **Roothide JB** (opa334). Cùng tính năng như bản Rootless nhưng tương thích với bootstrap roothide.",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Yêu cầu"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Roothide bootstrap (opa334)\n- iOS 15.0+\n- ellekit",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Liên hệ"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Telegram: @houselis",
+          "useSpacing": true
+        }
+      ]
+    }
+  ]
+}
