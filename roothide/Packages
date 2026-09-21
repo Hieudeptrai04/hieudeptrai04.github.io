@@ -25,7 +25,7 @@ Section: System
 Depends: firmware (>= 15.0)
 Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
 Filename: pool/main/ChangeInfoIos-v3-roothide_4.3.57_iphoneos-arm64e.deb
-Size: 298088
-MD5sum: 7e32764248f597f65e70d44e2dc21c26
-SHA1: b4a2ecb38e5357e10d4e5d118786e8d21f47fb34
-SHA256: 77f00dc4586affc3ca5d3c4bf23fc95bf8d792c84d28f6ffea328fc4a64c4c94
+Size: 298696
+MD5sum: f983ed6cc3cc3eef71813813e4bc6187
+SHA1: 220c7ee9da88aafaec9a0a044ada043d9d73fb83
+SHA256: 0217872260dedd62e759e23c74d1aa549d1b37f1aebff373ac6c22b9ef3ed5f4
