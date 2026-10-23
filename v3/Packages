@@ -63,3 +63,25 @@ Size: 280000
 MD5sum: bdde8b8911fb18e289a060f7a16d454b
 SHA1: 0ef2240e4ddeaefb923c456200dc34a08ce0a7f6
 SHA256: dab54e39d9cff5a87a8c10df1f8732ffa61eaed08f524fe6f96400f35a07af9e
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
+Version: 4.3.43-beta
+Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
+Section: Tweaks
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
+Icon: https://zalosuper.net/v3/icon.png
+SileoDepiction: https://zalosuper.net/v3/depiction.json
+Depiction: https://zalosuper.net/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ChangeInfoIos-v3_4.3.43-beta_iphoneos-arm64.deb
+Size: 280300
+MD5sum: 3aaa6994d5c30b81110b6f19f9f9d4d2
+SHA1: b44d39d5e0e6189148e072c2be9084cd5fc70fba
+SHA256: 1746bce3354ccbd1453be5dca1fa21a3dbcfbb130a169496742864674a4f0b15
