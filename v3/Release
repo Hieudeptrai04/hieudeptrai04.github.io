@@ -1,7 +1,7 @@
 Origin: HIOS Faker
 Label: HIOS Faker v3
 Suite: stable
-Version: 1:0.5.5-beta
+Version: 4.3.34
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
