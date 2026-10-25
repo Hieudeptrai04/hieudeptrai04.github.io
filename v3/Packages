@@ -44,7 +44,7 @@ SHA256: f51940019ff4c72ea2f9dfeb1e4c18a729386a67fee04ce72e9ca80f0004ae02
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
-Version: 4.3.41
+Version: 1:0.5.5-beta
 Architecture: iphoneos-arm64
 Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
 Maintainer: ChangeInfoIos
@@ -58,96 +58,8 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.41_iphoneos-arm64.deb
-Size: 280000
-MD5sum: bdde8b8911fb18e289a060f7a16d454b
-SHA1: 0ef2240e4ddeaefb923c456200dc34a08ce0a7f6
-SHA256: dab54e39d9cff5a87a8c10df1f8732ffa61eaed08f524fe6f96400f35a07af9e
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.3.43-beta
-Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
-Maintainer: ChangeInfoIos
-Author: ChangeInfoIos
-Section: Tweaks
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
-Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Provides: com.changeinfoios.tweak
-Icon: https://zalosuper.net/v3/icon.png
-SileoDepiction: https://zalosuper.net/v3/depiction.json
-Depiction: https://zalosuper.net/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.43-beta_iphoneos-arm64.deb
-Size: 280300
-MD5sum: 3aaa6994d5c30b81110b6f19f9f9d4d2
-SHA1: b44d39d5e0e6189148e072c2be9084cd5fc70fba
-SHA256: 1746bce3354ccbd1453be5dca1fa21a3dbcfbb130a169496742864674a4f0b15
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.3.45-beta
-Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
-Maintainer: ChangeInfoIos
-Author: ChangeInfoIos
-Section: Tweaks
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
-Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Provides: com.changeinfoios.tweak
-Icon: https://zalosuper.net/v3/icon.png
-SileoDepiction: https://zalosuper.net/v3/depiction.json
-Depiction: https://zalosuper.net/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.45-beta_iphoneos-arm64.deb
-Size: 282684
-MD5sum: 3e7a5aebd1b1124fd6b93d1ee7c0f009
-SHA1: 4d2fecf24fe9acfca681c697e69fdffdebe03429
-SHA256: 1970f49c3aa6559bb56479244ddbba8345150710b68471a85f885e548b7205d9
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.3.51-beta
-Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
-Maintainer: ChangeInfoIos
-Author: ChangeInfoIos
-Section: Tweaks
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
-Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Provides: com.changeinfoios.tweak
-Icon: https://zalosuper.net/v3/icon.png
-SileoDepiction: https://zalosuper.net/v3/depiction.json
-Depiction: https://zalosuper.net/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.51-beta_iphoneos-arm64.deb
-Size: 285084
-MD5sum: e4aabfd2bf7a6518eca01b14ce7de7dc
-SHA1: 415e78b850a87b08f8d17405ce8d7a82b073a9e8
-SHA256: 79e03669e401717c5e2a6e827e79a877d006252ffe7823c5af01f32795140540
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 4.3.55-beta
-Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
-Maintainer: ChangeInfoIos
-Author: ChangeInfoIos
-Section: Tweaks
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
-Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Provides: com.changeinfoios.tweak
-Icon: https://zalosuper.net/v3/icon.png
-SileoDepiction: https://zalosuper.net/v3/depiction.json
-Depiction: https://zalosuper.net/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_4.3.55-beta_iphoneos-arm64.deb
-Size: 285944
-MD5sum: 71c33d92b002438bc51d6f670ba5fd6c
-SHA1: 41ff2d8f6f2413ae7edeba553a8a9f7d88f81b2c
-SHA256: 35e29f2cae578a486ef5c80a70b026e6ff279973d151261e3da563f5ab6b4ce2
+Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.5-beta_iphoneos-arm64.deb
+Size: 286108
+MD5sum: 72c0239df28580307c76242f37277dcb
+SHA1: e3033503b0365d8c17f3275ab94ed4397b593ab9
+SHA256: cba88704a328492eac4f468f3ec7da96f6b9b87152dd1357c0fec72a99ef8e9e
