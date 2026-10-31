@@ -1,5 +1,27 @@
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
+Version: 1:0.5.5-beta
+Architecture: iphoneos-arm64
+Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
+Section: Tweaks
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
+Icon: https://zalosuper.net/v3/icon.png
+SileoDepiction: https://zalosuper.net/v3/depiction.json
+Depiction: https://zalosuper.net/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.5-beta_iphoneos-arm64.deb
+Size: 286108
+MD5sum: 72c0239df28580307c76242f37277dcb
+SHA1: e3033503b0365d8c17f3275ab94ed4397b593ab9
+SHA256: cba88704a328492eac4f468f3ec7da96f6b9b87152dd1357c0fec72a99ef8e9e
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3
 Version: 1:0.5.6-beta
 Architecture: iphoneos-arm64
 Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
@@ -63,25 +85,3 @@ Size: 279632
 MD5sum: 4806b878ec90e5e3f2734e7afbe5a192
 SHA1: e77677b8a7f29098b6c699828a03fa8274004d86
 SHA256: f51940019ff4c72ea2f9dfeb1e4c18a729386a67fee04ce72e9ca80f0004ae02
-
-Package: com.changeinfoios.v3
-Name: HIOS Faker v3
-Version: 1:0.5.5-beta
-Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
-Maintainer: ChangeInfoIos
-Author: ChangeInfoIos
-Section: Tweaks
-Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
-Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
-Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
-Provides: com.changeinfoios.tweak
-Icon: https://zalosuper.net/v3/icon.png
-SileoDepiction: https://zalosuper.net/v3/depiction.json
-Depiction: https://zalosuper.net/v3/depiction.html
-Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.5-beta_iphoneos-arm64.deb
-Size: 286108
-MD5sum: 72c0239df28580307c76242f37277dcb
-SHA1: e3033503b0365d8c17f3275ab94ed4397b593ab9
-SHA256: cba88704a328492eac4f468f3ec7da96f6b9b87152dd1357c0fec72a99ef8e9e
