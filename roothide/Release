@@ -6,3 +6,6 @@ Codename: ios
 Architectures: iphoneos-arm64e
 Components: main
 Description: HIOS Faker v3 danh rieng cho Roothide JB (opa334). Telegram @houselis
+SHA256:
+ 33a6bf5559fd846f312d4a7d7625e98629bbfa743661d624c3e51578582a6db3 2720 Packages
+ 718088247651adbabaa418bfe049babf8a1fa417c89693d91fb92fad1bef5b3a 790 Packages.gz

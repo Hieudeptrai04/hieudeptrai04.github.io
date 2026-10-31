@@ -6,3 +6,6 @@ Codename: ios
 Architectures: iphoneos-arm64
 Components: main
 Description: ViberChange - Viber-only device changer.
+SHA256:
+ beb33c6c1f760d0f769a5ca8c4d18756beb71f4cba4092ecce3eea9efcc0311b 1952 Packages
+ 3c5d86d4404ed633db95585856edd151dc598f33d7a50af08443bb39356aaa89 689 Packages.gz

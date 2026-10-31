@@ -111,6 +111,25 @@ jobs:
             if [ -f "$D/Release" ] && [ -n "$NEWEST" ]; then
               sed -i "s|^Version: .*|Version: $NEWEST|" "$D/Release"
               echo "  Release Version -> $NEWEST"
+
+              # Rebuild Release hashes so Sileo's "Hash for Packages.gz is invalid"
+              # cannot happen again. apt-ftparchive isn't on the runner — emit
+              # the three sections by hand against the Packages / Packages.gz
+              # we just wrote.
+              SP=$(stat -c%s "$D/Packages");    MP=$(md5sum "$D/Packages"    | cut -d' ' -f1); P1=$(sha1sum "$D/Packages"    | cut -d' ' -f1); P2=$(sha256sum "$D/Packages"    | cut -d' ' -f1)
+              SZ=$(stat -c%s "$D/Packages.gz"); MZ=$(md5sum "$D/Packages.gz" | cut -d' ' -f1); Z1=$(sha1sum "$D/Packages.gz" | cut -d' ' -f1); Z2=$(sha256sum "$D/Packages.gz" | cut -d' ' -f1)
+              awk -v mp="$MP" -v sp="$SP" -v mz="$MZ" -v sz="$SZ" \
+                  -v p1="$P1" -v z1="$Z1" -v p2="$P2" -v z2="$Z2" '
+                /^MD5Sum:/  { print; print " " mp " " sp " Packages"; print " " mz " " sz " Packages.gz"; skip=1; next }
+                /^SHA1:/    { print; print " " p1 " " sp " Packages"; print " " z1 " " sz " Packages.gz"; skip=1; next }
+                /^SHA256:/  { print; print " " p2 " " sp " Packages"; print " " z2 " " sz " Packages.gz"; skip=1; next }
+                /^[A-Za-z]/ { skip=0 }
+                { if (!skip) print }
+              ' "$D/Release" > "$D/Release.new" && mv "$D/Release.new" "$D/Release"
+              if ! grep -q '^SHA256:' "$D/Release"; then
+                printf 'SHA256:\n %s %s Packages\n %s %s Packages.gz\n' "$P2" "$SP" "$Z2" "$SZ" >> "$D/Release"
+              fi
+              echo "  Release hashes rebuilt"
             fi
           done
 

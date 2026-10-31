@@ -6,3 +6,6 @@ Codename: ios
 Architectures: iphoneos-arm64
 Components: main
 Description: HIOS Restore - cong cu chi de khoi phuc file .rrs. Telegram @minhvictor
+SHA256:
+ 140bf15ca889af7a751b9b4a6ee7207ff6719b85a61f7116fba6b0945755e7b4 5214 Packages
+ 6c283e438e2994ea1ea99b2ea463ca60377cd936a65a009aa0c2b93f60baafb9 1080 Packages.gz
