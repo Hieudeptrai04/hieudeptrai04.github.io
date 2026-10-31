@@ -14,7 +14,7 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.5-beta_iphoneos-arm64.deb
+Filename: pool/main/ChangeInfoIos-v3_1-0.5.5-beta_iphoneos-arm64.deb
 Size: 286108
 MD5sum: 72c0239df28580307c76242f37277dcb
 SHA1: e3033503b0365d8c17f3275ab94ed4397b593ab9
@@ -36,7 +36,7 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.6-beta_iphoneos-arm64.deb
+Filename: pool/main/ChangeInfoIos-v3_1-0.5.6-beta_iphoneos-arm64.deb
 Size: 287344
 MD5sum: fd01daf4f50f75553f66de1df0515c78
 SHA1: a37114053e0796db908234427c43ee4d11fe5ffc
@@ -58,7 +58,7 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.7-beta_iphoneos-arm64.deb
+Filename: pool/main/ChangeInfoIos-v3_1-0.5.7-beta_iphoneos-arm64.deb
 Size: 288816
 MD5sum: 7fa3f9d59b26621ad9d07ff8c07c45ee
 SHA1: bab085bf796887fbe8db91d8371604a98a99865a
