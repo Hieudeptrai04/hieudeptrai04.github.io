@@ -85,3 +85,25 @@ Size: 279632
 MD5sum: 4806b878ec90e5e3f2734e7afbe5a192
 SHA1: e77677b8a7f29098b6c699828a03fa8274004d86
 SHA256: f51940019ff4c72ea2f9dfeb1e4c18a729386a67fee04ce72e9ca80f0004ae02
+
+Package: com.changeinfoios.v3
+Name: HIOS Faker v3 — Bypass KYC Zalo
+Version: 1:0.5.7-beta
+Architecture: iphoneos-arm64
+Description: BYPASS KYC ZALO — vcam anti-detect (noise + exposure drift per-frame, chống Zalo detect camera giả khi call KYC). Device spoof toàn diện: MobileGestalt + CoreTelephony hooks + 8 Phase 1+2+3 trust signals (LastRestoreDate, BackupExtendedKey, AppleKeyboards VN seed, kAppFirstInstallTime keychain, PHAsset photos count, CMMotion sensor bias) → Zalo tưởng máy đã dùng lâu. Host app manage per-app spoof + VCam picker video từ Photos.
+Maintainer: ChangeInfoIos
+Author: ChangeInfoIos
+Section: Tweaks
+Depends: ellekit | mobilesubstrate, firmware (>= 15.0)
+Replaces: com.changeinfoios.tweak, com.changeinfoios.app, com.changeinfoios, com.changeinfoios.bundle, com.changeinfoios.safari, com.changeinfoios.location, com.changeinfoios.zalo
+Conflicts: com.changeinfoios.tweak, com.changeinfoios.bundle
+Provides: com.changeinfoios.tweak
+Icon: https://zalosuper.net/v3/icon.png
+SileoDepiction: https://zalosuper.net/v3/depiction.json
+Depiction: https://zalosuper.net/v3/depiction.html
+Tag: purpose::extension, compatible::dopamine
+Filename: pool/main/ChangeInfoIos-v3_1%3a0.5.7-beta_iphoneos-arm64.deb
+Size: 288816
+MD5sum: 7fa3f9d59b26621ad9d07ff8c07c45ee
+SHA1: bab085bf796887fbe8db91d8371604a98a99865a
+SHA256: 52f0fc3de522b64d1bd353e1ac15f13c6510ae5c71d2ecbce3a944ec5a385b5e
