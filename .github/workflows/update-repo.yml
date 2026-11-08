@@ -88,10 +88,10 @@ jobs:
                     -e 's|^Name: .*|Name: HIOS Faker v3 — 4.3.34 (bản ổn định T8/2026)|' \
                     -e 's|^Description: .*|Description: Bản 4.3.34 build 24/08/2026 — rootless Dopamine stable cũ. KHÔNG có vcam anti-detect, KHÔNG có Phase 1+2+3 trust signals. Dành cho fallback nếu beta mới lỗi. Sau bản này nhảy thẳng sang 1:0.5.5-beta (31/10/2026).|')
                   ;;
-                "v3:1:0.5.7-beta")
+                "v3:1:0.5.8-beta")
                   CTRL_OUT=$(printf '%s\n' "$CTRL_OUT" | sed \
-                    -e 's|^Name: .*|Name: HIOS Faker v3 — Bypass KYC Zalo|' \
-                    -e 's|^Description: .*|Description: BYPASS KYC ZALO (31/10/2026) — vcam anti-detect: noise + exposure drift per-frame, chống Zalo detect camera giả khi call KYC. Full device spoof MobileGestalt + CoreTelephony + 8 Phase 1+2+3 trust signals (LastRestoreDate, BackupExtendedKey, AppleKeyboards VN seed, kAppFirstInstallTime keychain, PHAsset photos count, CMMotion sensor bias).|')
+                    -e 's|^Name: .*|Name: HIOS Faker v3 — Anti Ban 3h (MỚI NHẤT)|' \
+                    -e 's|^Description: .*|Description: FIX BAN 3H ZALO (08/11/2026) — 8 CRITICAL fix: MAC Apple OUI pool, Serial 12 chars Apple pattern, MLB C0+9 (11 chars), EthernetAddress nil, BasebandChipId fixed per model, timeline Restore clamp, ApNonce per-boot riêng, Keychain UDID-fallback wipe cross-account. Hết lộ device cũ sang account mới. Bypass KYC vcam anti-detect giữ nguyên + 8 Phase 1+2+3 trust signals máy dùng lâu. CÀI BẢN NÀY để tránh ban 3h.|')
                   ;;
               esac
               printf '%s\n' "$CTRL_OUT" >> "$D/Packages.new"
