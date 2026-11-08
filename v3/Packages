@@ -43,10 +43,10 @@ SHA1: a37114053e0796db908234427c43ee4d11fe5ffc
 SHA256: 71a80467eba0810a80f6fde1f5b031465410195ca3dcd1fd3c2dc3cff9b75e35
 
 Package: com.changeinfoios.v3
-Name: HIOS Faker v3
+Name: HIOS Faker v3 — Bypass KYC Zalo
 Version: 1:0.5.7-beta
 Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Description: BYPASS KYC ZALO (31/10/2026) — vcam anti-detect: noise + exposure drift per-frame, chống Zalo detect camera giả khi call KYC. Full device spoof MobileGestalt + CoreTelephony + 8 Phase 1+2+3 trust signals (LastRestoreDate, BackupExtendedKey, AppleKeyboards VN seed, kAppFirstInstallTime keychain, PHAsset photos count, CMMotion sensor bias).
 Maintainer: ChangeInfoIos
 Author: ChangeInfoIos
 Section: Tweaks
@@ -87,10 +87,10 @@ SHA1: 310cb7c3b385c0a74ea26fb1dd276e0ff4af9a1e
 SHA256: 44de20c35f9aae0753a3dc851b7bef9d05f1c490a1fbc76c44ada691274ca6cc
 
 Package: com.changeinfoios.v3
-Name: HIOS Faker v3
+Name: HIOS Faker v3 — 4.3.34 (bản ổn định T8/2026)
 Version: 4.3.34
 Architecture: iphoneos-arm64
-Description: ChangeInfoIos v3 — focused device-spoof for popular iOS apps. MobileGestalt + CoreTelephony hooks are injected into the selected target apps (incl. Zalo) via the MobileSubstrate filters, plus CoreTelephony daemons (CommCenter). Host app manages per-app spoof + data reset.
+Description: Bản 4.3.34 build 24/08/2026 — rootless Dopamine stable cũ. KHÔNG có vcam anti-detect, KHÔNG có Phase 1+2+3 trust signals. Dành cho fallback nếu beta mới lỗi. Sau bản này nhảy thẳng sang 1:0.5.5-beta (31/10/2026).
 Maintainer: ChangeInfoIos
 Author: ChangeInfoIos
 Section: Tweaks
