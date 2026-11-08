@@ -80,6 +80,20 @@ jobs:
               # This deb's own control (drop any index-only fields), then the shared
               # presentation fields, then the computed index fields.
               CTRL_OUT=$(printf '%s\n' "$CTRL" | grep -vE '^(Filename|Size|MD5sum|SHA1|SHA256):')
+              # Per-version UI overrides (Name + Description) so Sileo shows a
+              # useful label for historical builds. Keyed by "$D:$VER".
+              case "$D:$VER" in
+                "v3:4.3.34")
+                  CTRL_OUT=$(printf '%s\n' "$CTRL_OUT" | sed \
+                    -e 's|^Name: .*|Name: HIOS Faker v3 — 4.3.34 (bản ổn định T8/2026)|' \
+                    -e 's|^Description: .*|Description: Bản 4.3.34 build 24/08/2026 — rootless Dopamine stable cũ. KHÔNG có vcam anti-detect, KHÔNG có Phase 1+2+3 trust signals. Dành cho fallback nếu beta mới lỗi. Sau bản này nhảy thẳng sang 1:0.5.5-beta (31/10/2026).|')
+                  ;;
+                "v3:1:0.5.7-beta")
+                  CTRL_OUT=$(printf '%s\n' "$CTRL_OUT" | sed \
+                    -e 's|^Name: .*|Name: HIOS Faker v3 — Bypass KYC Zalo|' \
+                    -e 's|^Description: .*|Description: BYPASS KYC ZALO (31/10/2026) — vcam anti-detect: noise + exposure drift per-frame, chống Zalo detect camera giả khi call KYC. Full device spoof MobileGestalt + CoreTelephony + 8 Phase 1+2+3 trust signals (LastRestoreDate, BackupExtendedKey, AppleKeyboards VN seed, kAppFirstInstallTime keychain, PHAsset photos count, CMMotion sensor bias).|')
+                  ;;
+              esac
               printf '%s\n' "$CTRL_OUT" >> "$D/Packages.new"
               if [ -n "$PRESENT" ]; then printf '%s\n' "$PRESENT" >> "$D/Packages.new"; fi
               printf 'Filename: pool/main/%s\n' "$BN"                             >> "$D/Packages.new"
