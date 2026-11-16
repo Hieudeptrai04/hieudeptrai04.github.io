@@ -88,10 +88,10 @@ jobs:
                     -e 's|^Name: .*|Name: HIOS Faker v3 — 4.3.34 (bản ổn định T8/2026)|' \
                     -e 's|^Description: .*|Description: Bản 4.3.34 build 24/08/2026 — rootless Dopamine stable cũ. KHÔNG có vcam anti-detect, KHÔNG có Phase 1+2+3 trust signals. Dành cho fallback nếu beta mới lỗi. Sau bản này nhảy thẳng sang 1:0.5.5-beta (31/10/2026).|')
                   ;;
-                "v3:1:0.5.8-beta")
+                "v3:1:0.5.9-beta")
                   CTRL_OUT=$(printf '%s\n' "$CTRL_OUT" | sed \
-                    -e 's|^Name: .*|Name: HIOS Faker v3 — Anti Ban 3h (MỚI NHẤT)|' \
-                    -e 's|^Description: .*|Description: FIX BAN 3H ZALO (08/11/2026) — 8 CRITICAL fix: MAC Apple OUI pool, Serial 12 chars Apple pattern, MLB C0+9 (11 chars), EthernetAddress nil, BasebandChipId fixed per model, timeline Restore clamp, ApNonce per-boot riêng, Keychain UDID-fallback wipe cross-account. Hết lộ device cũ sang account mới. Bypass KYC vcam anti-detect giữ nguyên + 8 Phase 1+2+3 trust signals máy dùng lâu. CÀI BẢN NÀY để tránh ban 3h.|')
+                    -e 's|^Name: .*|Name: HIOS Faker v3 — Anti Ban 3h v2 (DeviceCheck/AppAttest)|' \
+                    -e 's|^Description: .*|Description: FIX BAN 3H ZALO v2 (16/11/2026) — Block DeviceCheck + App Attest (iOS-only framework Android không có, giải thích tại sao Android reg live mà iOS ban). Hook DCDevice.supported=NO + DCAppAttestService isSupported=NO + attestKey/generateAssertion block. Giữ 8 fix của 0.5.8-beta (MAC Apple OUI, Serial 12 ch, MLB C0, EthernetAddress nil, BasebandChipId fixed, timeline clamp, ApNonce per-boot, Keychain UDID-fallback) + Phase 1+2+3 trust signals + vcam anti-detect. CÀI BẢN NÀY.|')
                   ;;
               esac
               printf '%s\n' "$CTRL_OUT" >> "$D/Packages.new"
