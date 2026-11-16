@@ -1,8 +1,8 @@
 Package: com.changeinfoios.v3
-Name: HIOS Faker v3 — Anti Ban 3h (MỚI NHẤT)
-Version: 1:0.5.8-beta
+Name: HIOS Faker v3 — Anti Ban 3h v2 (DeviceCheck/AppAttest)
+Version: 1:0.5.9-beta
 Architecture: iphoneos-arm64
-Description: FIX BAN 3H ZALO (08/11/2026) — 8 CRITICAL fix: MAC Apple OUI pool, Serial 12 chars Apple pattern, MLB C0+9 (11 chars), EthernetAddress nil, BasebandChipId fixed per model, timeline Restore clamp, ApNonce per-boot riêng, Keychain UDID-fallback wipe cross-account. Hết lộ device cũ sang account mới. Bypass KYC vcam anti-detect giữ nguyên + 8 Phase 1+2+3 trust signals máy dùng lâu. CÀI BẢN NÀY để tránh ban 3h.
+Description: FIX BAN 3H ZALO v2 (16/11/2026) — Block DeviceCheck + App Attest (iOS-only framework Android không có, giải thích tại sao Android reg live mà iOS ban). Hook DCDevice.supported=NO + DCAppAttestService isSupported=NO + attestKey/generateAssertion block. Giữ 8 fix của 0.5.8-beta (MAC Apple OUI, Serial 12 ch, MLB C0, EthernetAddress nil, BasebandChipId fixed, timeline clamp, ApNonce per-boot, Keychain UDID-fallback) + Phase 1+2+3 trust signals + vcam anti-detect. CÀI BẢN NÀY.
 Maintainer: ChangeInfoIos
 Author: ChangeInfoIos
 Section: Tweaks
@@ -14,11 +14,11 @@ Icon: https://zalosuper.net/v3/icon.png
 SileoDepiction: https://zalosuper.net/v3/depiction.json
 Depiction: https://zalosuper.net/v3/depiction.html
 Tag: purpose::extension, compatible::dopamine
-Filename: pool/main/ChangeInfoIos-v3_1-0.5.8-beta_iphoneos-arm64.deb
-Size: 290480
-MD5sum: 8c82d08c48850bafabfbb51e05cd12da
-SHA1: ccc5e0f16ecb09f5cf51d9405e1243218b0352e1
-SHA256: 9fc566337b08162fcfac38f77d2de92944ff890ac11a7f2815dc836f783062a9
+Filename: pool/main/ChangeInfoIos-v3_1-0.5.9-beta_iphoneos-arm64.deb
+Size: 291052
+MD5sum: f2938c3fe64569590168fea918025c83
+SHA1: 2b099b85de7bc00a67ed74a329ac8d15b91ad696
+SHA256: fe78df2852f79e09882008d9af2d04d9b8a84e99c7412670ace29b848f2302bd
 
 Package: com.changeinfoios.v3
 Name: HIOS Faker v3
